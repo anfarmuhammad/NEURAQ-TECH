@@ -5,7 +5,7 @@ function AboutSection() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[#030b17] text-white py-20"
+      className="relative overflow-hidden bg-black text-white py-20"
     >
       {/* === Animated Tech Overlay === */}
       <div className="absolute inset-0 z-0">
