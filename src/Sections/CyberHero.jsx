@@ -151,7 +151,7 @@
 // };
 
 
-// // src/sections/CyberHero.jsx
+// src/sections/CyberHero.jsx
 // import React, { useEffect, useRef } from 'react';
 // import { motion } from 'framer-motion';
 // import { Link } from 'react-router-dom';
@@ -322,7 +322,7 @@
 //   );
 // };
 
-// src/sections/CyberHero.jsx
+// // src/sections/CyberHero.jsx
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -521,3 +521,154 @@ export const CyberHero = () => {
     </section>
   );
 };
+
+
+// import React, { useEffect, useRef } from "react";
+// import { motion } from "framer-motion";
+// import { Link } from "react-router-dom";
+// import * as THREE from "three";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// export const CyberHero = () => {
+//   const particlesRef = useRef(null);
+
+//   useEffect(() => {
+//     gsap.registerPlugin(ScrollTrigger);
+
+//     // === Particle Animation ===
+//     const canvas = particlesRef.current;
+//     const scene = new THREE.Scene();
+//     const camera = new THREE.PerspectiveCamera(
+//       75,
+//       window.innerWidth / window.innerHeight,
+//       0.1,
+//       1000
+//     );
+//     const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+//     renderer.setSize(window.innerWidth, window.innerHeight);
+//     renderer.setClearColor(0x000000, 0);
+
+//     const particlesGeometry = new THREE.BufferGeometry();
+//     const count = 1500;
+//     const posArray = new Float32Array(count * 3);
+//     for (let i = 0; i < count * 3; i++) {
+//       posArray[i] = (Math.random() - 0.5) * 10;
+//     }
+//     particlesGeometry.setAttribute(
+//       "position",
+//       new THREE.BufferAttribute(posArray, 3)
+//     );
+
+//     const particlesMaterial = new THREE.PointsMaterial({
+//       size: 0.005,
+//       color: 0x39ff14,
+//       transparent: true,
+//       opacity: 0.8,
+//       blending: THREE.AdditiveBlending,
+//     });
+
+//     const points = new THREE.Points(particlesGeometry, particlesMaterial);
+//     scene.add(points);
+//     camera.position.z = 2;
+
+//     const animate = () => {
+//       requestAnimationFrame(animate);
+//       points.rotation.x += 0.0005;
+//       points.rotation.y += 0.001;
+//       renderer.render(scene, camera);
+//     };
+//     animate();
+
+//     const resizeHandler = () => {
+//       camera.aspect = window.innerWidth / window.innerHeight;
+//       camera.updateProjectionMatrix();
+//       renderer.setSize(window.innerWidth, window.innerHeight);
+//     };
+//     window.addEventListener("resize", resizeHandler);
+
+//     return () => {
+//       window.removeEventListener("resize", resizeHandler);
+//       renderer.dispose();
+//     };
+//   }, []);
+
+//   return (
+//     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black text-white font-['Orbitron']">
+//       {/* Particles Canvas */}
+//       <canvas
+//         ref={particlesRef}
+//         className="absolute top-0 left-0 w-full h-full pointer-events-none"
+//       />
+
+//       {/* Glitch Title and Text */}
+//       <div className="relative z-10 text-center px-4">
+//         <motion.h1
+//           className="text-[clamp(3rem,12vw,9rem)] font-bold glitch relative mb-8"
+//           data-text="TECH NEURAQ"
+//           initial={{ opacity: 0, y: 50 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 1 }}
+//         >
+//           <span className="block">TECH</span>
+//           <span className="block text-[#39ff14]">NEURAQ</span>
+//         </motion.h1>
+
+//         <motion.p
+//           className="text-[clamp(1.1rem,2.5vw,1.6rem)] font-light opacity-90 max-w-2xl mx-auto mb-10"
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           transition={{ delay: 0.5, duration: 1 }}
+//         >
+//           Redefining the boundaries with AI || We make your online identity
+//         </motion.p>
+
+//         {/* CTA Buttons */}
+//         <motion.div
+//           className="flex flex-wrap justify-center gap-6"
+//           initial={{ opacity: 0, y: 30 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ delay: 0.8, duration: 0.8 }}
+//         >
+//           <Link to="/innovation">
+//             <button className="relative border-2 border-[#39ff14] text-[#39ff14] uppercase tracking-widest font-semibold px-8 py-3 overflow-hidden transition-all duration-300 group">
+//               <span className="relative z-10">Discover More</span>
+//               <span className="absolute top-0 left-0 w-full h-full bg-[#39ff14] -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
+//             </button>
+//           </Link>
+
+//           <Link to="/contact">
+//             <button className="relative border-2 border-[#ff00ff] text-[#ff00ff] uppercase tracking-widest font-semibold px-8 py-3 overflow-hidden transition-all duration-300 group">
+//               <span className="relative z-10">Let's Collaborate</span>
+//               <span className="absolute top-0 left-0 w-full h-full bg-[#ff00ff] -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
+//             </button>
+//           </Link>
+//         </motion.div>
+//       </div>
+
+//       {/* Data Stream Lines */}
+//       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+//         {[...Array(3)].map((_, i) => (
+//           <div
+//             key={i}
+//             className={`absolute top-[-100%] w-[1px] h-full opacity-50 bg-gradient-to-b from-transparent via-[#39ff14] to-transparent animate-[dataStream_${8 + i * 2}s_linear_infinite]`}
+//             style={{ left: `${20 + i * 30}%` }}
+//           ></div>
+//         ))}
+//       </div>
+
+//       {/* Scroll Indicator */}
+//       <motion.div
+//         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-[#39ff14]"
+//         initial={{ opacity: 0 }}
+//         animate={{ opacity: 1 }}
+//         transition={{ delay: 1.5 }}
+//       >
+//         <div className="w-[2px] h-10 bg-gradient-to-b from-[#39ff14] to-transparent relative">
+//           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 border-r-2 border-b-2 border-[#39ff14] rotate-45"></div>
+//         </div>
+//         <div className="w-[1px] h-8 bg-[#39ff14] mt-2 opacity-60 animate-[scrollPulse_2s_ease-in-out_infinite]"></div>
+//       </motion.div>
+//     </section>
+//   );
+// };

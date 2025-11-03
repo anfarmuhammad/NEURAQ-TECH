@@ -1,8 +1,8 @@
 // src/pages/Base.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
-import { TechButton } from '../Ui/TechButton';
-import { ExternalLink } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { TechButton } from "../Ui/TechButton";
+import { ExternalLink } from "lucide-react";
 
 const Base = () => {
   const products = [
@@ -13,16 +13,16 @@ const Base = () => {
       image: "/assets/images/pro-1.svg",
       badge: "Featured",
       link: "https://care.neuraq.in/",
-      tags: []
+      tags: [],
     },
     {
       title: "TBGS Track",
       category: "Company Management Software",
-      description: "We've developed their entire company management system",
+      description: "We've developed their entire management system",
       image: "/assets/images/pro-2.svg",
       badge: null,
       link: "#",
-      tags: []
+      tags: [],
     },
     {
       title: "Academic Website",
@@ -31,7 +31,7 @@ const Base = () => {
       image: "/assets/images/pro-4.svg",
       badge: "New",
       link: "https://najmulhuda.com/",
-      tags: []
+      tags: [],
     },
     {
       title: "Resort Website",
@@ -40,7 +40,7 @@ const Base = () => {
       image: "/assets/images/pro-5.svg",
       badge: null,
       link: "",
-      tags: []
+      tags: [],
     },
     {
       title: "Euro Marketing",
@@ -49,7 +49,7 @@ const Base = () => {
       image: "/assets/images/pro-6.svg",
       badge: null,
       link: "https://euromarketing.in/",
-      tags: []
+      tags: [],
     },
     {
       title: "Portfolio Website",
@@ -58,8 +58,8 @@ const Base = () => {
       image: "/assets/images/pro-7.svg",
       badge: null,
       link: "https://arunjithperambra.in/",
-      tags: []
-    }
+      tags: [],
+    },
   ];
 
   return (
@@ -72,6 +72,7 @@ const Base = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl font-bold font-orbitron mb-6 text-gradient"
+            aria-label="Our Innovations"
           >
             Our Innovations
           </motion.h1>
@@ -80,6 +81,7 @@ const Base = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
+            aria-label="Cutting-edge solutions transforming digital identity"
           >
             Cutting-edge solutions transforming digital identity
           </motion.p>
@@ -99,20 +101,19 @@ const Base = () => {
                 className="glass-card group hover:border-primary/50 transition-all duration-300 overflow-hidden"
               >
                 {/* Product Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={product.image} 
+                <div className="relative h-48 overflow-hidden rounded-t-lg">
+                  <img
+                    src={product.image}
                     alt={product.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
-                  
                   {/* Badge */}
                   {product.badge && (
                     <div className="absolute top-4 right-4 bg-gradient-primary text-dark px-3 py-1 rounded-full text-xs font-bold font-orbitron uppercase">
                       {product.badge}
                     </div>
                   )}
-
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-dark/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                     <div className="text-white">
@@ -121,7 +122,7 @@ const Base = () => {
                       {product.tags.length > 0 && (
                         <div className="flex flex-wrap gap-2 mt-3">
                           {product.tags.map((tag, tagIndex) => (
-                            <span 
+                            <span
                               key={tagIndex}
                               className="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30"
                             >
@@ -134,11 +135,10 @@ const Base = () => {
                   </div>
                 </div>
 
-                {/* Product Details */}
+                {/* Product Details & Button */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white mb-2">{product.title}</h3>
                   <p className="text-gray-400 text-sm mb-4">{product.category}</p>
-                  
                   <TechButton
                     variant="primary"
                     size="small"
@@ -163,6 +163,7 @@ const Base = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto glass-card p-12"
+            aria-label="Connect for Revolution"
           >
             <h2 className="text-3xl md:text-4xl font-bold font-orbitron mb-4 text-gradient">
               Connect for Revolution
@@ -172,6 +173,7 @@ const Base = () => {
                 variant="primary"
                 size="large"
                 href="https://wa.me/918089124307?text=I'm%20interested%20to%20the%20Collaborate"
+                aria-label="Connect via WhatsApp"
               >
                 Connect Us
               </TechButton>

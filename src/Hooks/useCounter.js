@@ -7,7 +7,7 @@ export const useCounter = (target, duration = 2000) => {
   useEffect(() => {
     let start = 0;
     const increment = target / (duration / 16);
-    
+
     const timer = setInterval(() => {
       start += increment;
       if (start >= target) {
