@@ -1,4 +1,7 @@
 import React from "react";
+import Pro1 from '../assets/images/pro-1.svg'
+import Pro2 from '../assets/images/pro-2.svg'
+import Pro3 from '../assets/images/pro-3.svg'
 
 function ProductsSection() {
   return (
@@ -29,7 +32,7 @@ function ProductsSection() {
           >
             <div className="relative overflow-hidden rounded-t-2xl">
               <img
-                src="assets/images/pro-1.svg"
+                src={Pro1}
                 alt="Smart Care App"
                 className="w-full object-cover"
               />
@@ -83,7 +86,7 @@ function ProductsSection() {
           >
             <div className="relative overflow-hidden rounded-t-2xl">
               <img
-                src="assets/images/pro-2.svg"
+                src={Pro2}
                 alt="TBGS Track"
                 className="w-full object-cover"
               />
@@ -131,7 +134,7 @@ function ProductsSection() {
           >
             <div className="relative overflow-hidden rounded-t-2xl">
               <img
-                src="assets/images/pro-4.svg"
+                src={Pro3}
                 alt="Accadamic Website"
                 className="w-full object-cover"
               />

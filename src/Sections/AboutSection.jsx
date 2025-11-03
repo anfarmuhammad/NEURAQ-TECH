@@ -1,12 +1,12 @@
 import React from "react";
-import { Shield } from "lucide-react"; // for clean icon replacement
+import { Shield } from "lucide-react";
+import HomeAb from "../assets/images/homeab.svg";
+
 
 function AboutSection() {
   return (
-    <section
-      id="about"
-      className="relative overflow-hidden bg-black text-white py-20"
-    >
+    <section id="about" className="relative overflow-hidden bg-black text-white py-20">
+
       {/* === Animated Tech Overlay === */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/2 left-0 w-full h-px bg-cyan-400/20"></div>
@@ -18,7 +18,9 @@ function AboutSection() {
         <div className="absolute w-3 h-3 bg-cyan-400 rounded-full top-[80%] left-[40%] animate-pulse"></div>
       </div>
 
+      {/* === Main Content === */}
       <div className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
+
         {/* === Text Section === */}
         <div className="flex-1 space-y-6">
           <div>
@@ -32,18 +34,18 @@ function AboutSection() {
           </h2>
 
           <p className="text-gray-300 leading-relaxed">
-            At <span className="text-cyan-400 font-semibold">Neuraq Technologies</span>, 
-            we specialize in AI-powered digital identity solutions designed to help 
-            individuals and small businesses establish secure online identities at 
-            affordable prices. Our mission is to make advanced digital tools accessible 
+            At <span className="text-cyan-400 font-semibold">Neuraq Technologies</span>,
+            we specialize in AI-powered digital identity solutions designed to help
+            individuals and small businesses establish secure online identities at
+            affordable prices. Our mission is to make advanced digital tools accessible
             and practical for everyone, empowering growth and security in the digital world.
           </p>
 
           <p className="text-gray-400">
-            We are also committed to developing inclusive AI that breaks communication 
-            barriers for people with disabilities. Our ongoing research in speaking AI 
-            and our flagship product, <span className="text-cyan-400 font-semibold">Neuraq Smart Care</span>, 
-            for the healthcare sector, reflect our dedication to creating innovative 
+            We are committed to developing inclusive AI that breaks communication
+            barriers for people with disabilities. Our ongoing research in speaking AI
+            and our flagship product, <span className="text-cyan-400 font-semibold">Neuraq Smart Care</span>,
+            for the healthcare sector, reflects our dedication to creating innovative
             solutions that make the digital future more accessible for all.
           </p>
 
@@ -117,8 +119,8 @@ function AboutSection() {
         <div className="flex-1 relative">
           <div className="relative rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(0,255,255,0.2)]">
             <img
-              src="assets/images/home-ab-2.svg"
-              alt="Neuraq Technologies Lab"
+              src={HomeAb}
+              alt="Illustration of Neuraq Technologies Lab"
               className="w-full"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-cyan-400/10 via-transparent to-transparent"></div>

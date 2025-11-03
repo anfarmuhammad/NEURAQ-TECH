@@ -62,7 +62,7 @@ const Innovation = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-dark text-light pt-20">
+    <div className="min-h-screen bg-black text-light pt-20">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="container mx-auto px-4 text-center">

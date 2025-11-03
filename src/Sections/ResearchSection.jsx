@@ -1,6 +1,7 @@
 // src/Sections/ResearchSection
 import React from "react";
 import { Brain, Atom, Fingerprint } from "lucide-react";
+import Inititive from '../assets/images/inititive.svg'
 
 function ResearchSection() {
   return (
@@ -30,7 +31,7 @@ function ResearchSection() {
             <div className="absolute inset-0 bg-gradient-to-tr from-cyan-400/10 via-transparent to-transparent"></div>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,255,0.1)_0%,transparent_70%)]"></div>
             <img
-              src="assets/images/inititive.svg"
+              src={Inititive}
               alt="Neuraq Research Lab"
               className="w-full transition-transform duration-700 group-hover:scale-105"
             />

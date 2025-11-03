@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { useCounter } from '../Hooks/useCounter';
 import { TechButton } from '../Ui/TechButton';
 import { Users, Award, Target, Heart } from 'lucide-react';
+import Profile from '../assets/images/profile-1.svg'
+import Signature  from '../assets/images/sin.png'
 
 const About = () => {
   const happyCustomers = useCounter(29);
@@ -51,7 +53,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-dark text-light pt-20">
+    <div className="min-h-screen bg-black text-light pt-20">
       {/* Founder Story Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="container mx-auto px-4">
@@ -64,7 +66,7 @@ const About = () => {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/assets/images/about-1-1.svg" 
+                  src={Profile}
                   alt="Shaheen K.P., Founder" 
                   className="w-full h-auto"
                 />
@@ -103,7 +105,7 @@ const About = () => {
               
               <div className="flex items-center gap-4 mt-8 pt-6 border-t border-gray-800">
                 <img 
-                  src="/assets/images/sin.png" 
+                  src={Signature}
                   alt="Shaheen's Signature" 
                   className="h-12"
                 />

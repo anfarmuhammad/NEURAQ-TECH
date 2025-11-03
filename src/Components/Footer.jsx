@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Github, Instagram } from 'lucide-react';
+import NeuLOgo from '../assets/images/logo.png'
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -40,7 +41,7 @@ export const Footer = () => {
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
               <img 
-                src="/assets/images/logo.png" 
+                src={NeuLOgo} 
                 alt="Neuraq Technologies" 
                 className="h-12 w-auto"
               />

@@ -1,13 +1,23 @@
 import React from "react";
+import BharatGas  from "../assets/images/2.svg"
+import Zieo from "../assets/images/1.svg"
+import  EuroMarketing from "../assets/images/3.svg"
+import  PalliativeCare from "../assets/images/4.svg"
+import  Aljamia from "../assets/images/5.svg"
+import   BugHoster from "../assets/images/6.svg"
+ 
+
+
+
 
 function PartnersSection() {
     const partners = [
-        "/assets/images/2.svg",
-        "/assets/images/1.svg",
-        "/assets/images/3.svg",
-        "/assets/images/4.svg",
-        "/assets/images/5.svg",
-        "/assets/images/6.svg",
+        BharatGas,
+        Zieo,
+        EuroMarketing,
+        PalliativeCare,
+        Aljamia,
+        BugHoster,
     ];
 
     return (

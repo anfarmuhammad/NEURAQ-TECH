@@ -1,4 +1,7 @@
 import React from "react";
+import BlogOne from '../assets/images/blog-1.svg'
+import BlogTwo from '../assets/images/blog-2.svg'
+
 
 function NewsSection() {
   return (
@@ -38,7 +41,7 @@ function NewsSection() {
 
             <div className="relative mb-5">
               <img
-                src="assets/images/blog-1.svg"
+                src={BlogOne}
                 alt="Neural network visualization"
                 className="w-full rounded-xl border border-gray-700"
               />
@@ -88,7 +91,7 @@ function NewsSection() {
 
             <div className="relative mb-5">
               <img
-                src="assets/images/blog-2.svg"
+                src={BlogTwo}
                 alt="Quantum computer"
                 className="w-full rounded-xl border border-gray-700"
               />

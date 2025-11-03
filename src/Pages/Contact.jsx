@@ -59,9 +59,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark text-light pt-20">
+    <div className="min-h-screen bg-black  text-light pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 text-center bg-gradient-to-br from-primary/10 to-accent/10">
+      <section className="relative py-20 text-center  bg-gradient-to-br from-primary/10 to-accent/10">
         <div className="container mx-auto px-4">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
@@ -245,7 +245,7 @@ const Contact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary to-accent text-dark">
+      <section className="relative text-white py-20 bg-gradient-to-br from-primary to-accent text-dark">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

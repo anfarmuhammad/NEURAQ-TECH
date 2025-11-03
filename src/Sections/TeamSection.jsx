@@ -1,5 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Profile1 from "../assets/images/profile-1.svg"
+import Profile2 from "../assets/images/profile-2.svg"
+import Profile3 from "../assets/images/profile-3.svg"
 import {
   FaLinkedinIn,
   FaInstagram,
@@ -13,7 +16,7 @@ function TeamSection() {
     {
       name: "Mr. Mohammed Shaheen KP",
       title: "CEO & Founder",
-      img: "assets/images/profile-1.svg",
+      img: Profile1, // ✅ fixed here
       bio: "A dynamic tech leader and current BS Data Science student at IIT Madras. With strong leadership skills and hands-on experience in software development, Shaheen bridges innovation and execution.",
       tags: ["Founder", "Leadership"],
       social: [
@@ -25,7 +28,7 @@ function TeamSection() {
     {
       name: "Mr. Sajid Kuzhiyengal",
       title: "Managing Director",
-      img: "assets/images/profile-3.svg",
+      img: Profile2,
       bio: "22+ years of experience managing successful businesses. Sajid brings deep strategic insight and leadership to the team, combining traditional business acumen with a vision for future technologies.",
       tags: ["Business Strategy", "Vision"],
       social: [
@@ -37,7 +40,7 @@ function TeamSection() {
     {
       name: "Mr. Mohammed Ashik",
       title: "Senior Developer",
-      img: "assets/images/profile-2.svg",
+      img: Profile3,
       bio: "A senior developer specializing in React, Node.js, Python, and the MERN stack with TypeScript. Ashik leads our product UX and engineering teams, focusing on all our products and software.",
       tags: ["Developer", "Project Lead"],
       social: [
