@@ -3,9 +3,21 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useCounter } from "../Hooks/useCounter";
 import { TechButton } from "../Ui/TechButton";
-import { Users, Award, Target, Heart } from "lucide-react";
+import { Heart, Target } from "lucide-react";
 import Profile from "../assets/images/profile-1.svg";
 import Signature from "../assets/images/sin.png";
+import News from "../assets/images/blog-2.svg"
+import Award from "../assets/images/HAND.svg"
+import Profile1 from "../assets/images/profile-1.svg"
+import Profile2 from "../assets/images/profile-2.svg"
+import Profile3 from "../assets/images/profile-3.svg"
+import Profile4 from "../assets/images/profile-4.svg"
+import Profile5 from "../assets/images/profile-6.svg"
+import Profile6 from "../assets/images/profile-5.svg"
+import Profile7 from "../assets/images/profile-7.svg"
+import Profile8 from "../assets/images/profile-9.svg"
+import Profile9 from "../assets/images/profile-8.svg"
+
 
 const About = () => {
   const happyCustomers = useCounter(29);
@@ -13,44 +25,106 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: "Mr. Mohammed Shaheen KP",
-      role: "CEO & Founder",
-      image: "/assets/images/profile-1.svg",
-      bio: "A dynamic tech leader and current BS Data Science student at IIT Madras. With strong leadership skills and hands-on experience in software development, Shaheen bridges innovation and execution.",
+      name: "Mr. Shaheen K.P",
+      role: "Founder & CEO",
+      image: Profile1,
+      bio: "Visionary leader with a passion for socially impactful technology and inclusive innovation.",
       tags: ["Founder", "Leadership"],
       social: {
-        linkedin: "https://www.linkedin.com/in/shaheenkp/",
-        instagram: "https://www.instagram.com/___zcl3_/",
-        twitter: "https://x.com/Msk012005",
+        linkedin: "#",
+        twitter: "#",
       },
     },
     {
       name: "Mr. Sajid Kuzhiyengal",
       role: "Managing Director",
-      image: "/assets/images/profile-3.svg",
-      bio: "22+ years of experience managing successful businesses. Sajid brings deep strategic insight and leadership to the team, combining traditional business acumen with a vision for future technologies.",
+      image: Profile2,
+      bio: "Brings 22+ years of business leadership and a forward-thinking approach to technology.",
       tags: ["Business Strategy", "Vision"],
       social: {
-        linkedin: "https://www.linkedin.com/in/sajid-kp-62a005341/",
-        instagram: "https://www.instagram.com/sajid.kuzhiyengal/",
-        whatsapp: "https://wa.me/919947020307",
+        linkedin: "#",
+        github: "#",
       },
     },
-    // Add more members as needed...
+    {
+      name: "Mr. Mohammed Ashik",
+      role: "Senior Developer",
+      image: Profile3,
+      bio: "Full-stack developer specializing in accessible user interfaces.",
+      tags: ["Developer", "Full-Stack"],
+      social: {
+        linkedin: "#",
+        github: "#",
+      },
+    },
+    {
+      name: "Mr. Mohammed Anfar M",
+      role: "Developer",
+      image: Profile4,
+      bio: "Full-stack developer specializing in accessible user interfaces.",
+      tags: ["Developer"],
+      social: {
+        linkedin: "#",
+        twitter: "#",
+      },
+    },
+    {
+      name: "Mr. Irshad Ali",
+      role: "Graphic Designer",
+      image: Profile5,
+      bio: "Designs that speak louder than words – bringing Neuraq’s vision to life.",
+      tags: ["Design", "Creative"],
+      social: {
+        linkedin: "#",
+        twitter: "#",
+      },
+    },
+    {
+      name: "Mr. Minhaj",
+      role: "Media Wing",
+      image: Profile6,
+      bio: "Creative force behind the lens, capturing Neuraq’s journey through every frame.",
+      tags: ["Media", "Creative"],
+      social: {
+        linkedin: "#",
+        twitter: "#",
+      },
+    },
+    {
+      name: "Mr. Nishanth VM",
+      role: "Developer (Intern)",
+      image: Profile7,
+      bio: "",
+      tags: ["Intern", "Developer"],
+      social: {
+        linkedin: "#",
+        twitter: "#",
+      },
+    },
+    {
+      name: "Mr. Srikanth Dwarapureddy",
+      role: "Developer (Intern)",
+      image: Profile8,
+      bio: "",
+      tags: ["Intern", "Developer"],
+      social: {
+        linkedin: "#",
+        twitter: "#",
+      },
+    },
+    {
+      name: "Mr. Rajkumar R",
+      role: "Developer (Intern)",
+      image: Profile9,
+      bio: "",
+      tags: ["Intern", "Developer"],
+      social: {
+        linkedin: "#",
+        twitter: "#",
+      },
+    },
   ];
 
-  const values = [
-    {
-      icon: Target,
-      title: "No problem without solution",
-      description: "We turn impossible problems into AI-powered solutions effortlessly.",
-    },
-    {
-      icon: Heart,
-      title: "Social Impact Focus",
-      description: "Creating technology that makes a real difference in people's lives.",
-    },
-  ];
 
   return (
     <main className="min-h-screen bg-black text-light pt-20">
@@ -123,8 +197,9 @@ const About = () => {
       </section>
 
       {/* HeuLink Initiative */}
-      <section className="relative py-20 bg-darker">
+      <section className="relative py-20 bg-darker overflow-hidden">
         <div className="container mx-auto px-4">
+          {/* Header */}
           <motion.header
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -134,25 +209,26 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold font-orbitron mb-4 text-gradient">
               HeuLink Initiative
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Breaking communication barriers with AI
             </p>
           </motion.header>
 
+          {/* Problem / Solution Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Problem Card */}
             <motion.section
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="glass-card border border-red-500/20"
+              className="glass-card border border-red-500/20 p-8 rounded-2xl"
               aria-labelledby="problem-title"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center" aria-hidden="true">
+                <div className="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center">
                   <Heart className="w-6 h-6 text-red-400" />
                 </div>
-                <h3 id="problem-title" className="text-2xl font-orbitron">
+                <h3 id="problem-title" className="text-2xl font-orbitron text-white">
                   The Problem
                 </h3>
               </div>
@@ -175,27 +251,45 @@ const About = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="glass-card border border-primary/20"
+              className="glass-card border border-primary/20 p-8 rounded-2xl"
               aria-labelledby="solution-title"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center" aria-hidden="true">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
                   <Target className="w-6 h-6 text-primary" />
                 </div>
-                <h3 id="solution-title" className="text-2xl font-orbitron">
+                <h3 id="solution-title" className="text-2xl font-orbitron text-white">
                   Our Solution
                 </h3>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {[
-                  { icon: "🎤", title: "Continuous Voice Analysis", desc: "Real-time monitoring of speech patterns and disfluencies" },
-                  { icon: "🎯", title: "Personalized Exercises", desc: "Tailored activities based on individual speech patterns" },
-                  { icon: "🌐", title: "Multilingual Support", desc: "Currently supporting English and Malayalam with more to come" },
-                  { icon: "📊", title: "Progress Tracking", desc: "Detailed analytics to monitor improvement over time" },
+                  {
+                    icon: "🎤",
+                    title: "Continuous Voice Analysis",
+                    desc: "Real-time monitoring of speech patterns and disfluencies",
+                  },
+                  {
+                    icon: "🎯",
+                    title: "Personalized Exercises",
+                    desc: "Tailored activities based on individual speech patterns",
+                  },
+                  {
+                    icon: "🌐",
+                    title: "Multilingual Support",
+                    desc: "Currently supporting English and Malayalam with more to come",
+                  },
+                  {
+                    icon: "📊",
+                    title: "Progress Tracking",
+                    desc: "Detailed analytics to monitor improvement over time",
+                  },
                 ].map(({ icon, title, desc }, idx) => (
                   <div key={idx} className="flex gap-3">
-                    <span className="text-2xl" aria-hidden="true">{icon}</span>
+                    <span className="text-2xl" aria-hidden="true">
+                      {icon}
+                    </span>
                     <div>
                       <h4 className="font-semibold text-white">{title}</h4>
                       <p className="text-gray-400 text-sm">{desc}</p>
@@ -206,14 +300,17 @@ const About = () => {
             </motion.section>
           </div>
 
+          {/* CTA Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center mt-12 max-w-4xl mx-auto"
+            className="text-center mt-16 max-w-4xl mx-auto"
           >
             <p className="text-xl text-gray-300 mb-8">
-              We envision a future where communication barriers no longer exist—where every voice, regardless of its challenges, is heard clearly and confidently.
+              We envision a future where communication barriers no longer exist—
+              where every voice, regardless of its challenges, is heard clearly
+              and confidently.
             </p>
             <TechButton variant="primary" size="large">
               Learn More About HeuLink
@@ -221,6 +318,119 @@ const About = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Impact Section */}
+      <section className="relative py-20 bg-darker">
+        <div className="container mx-auto px-4">
+          <motion.header
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold font-orbitron mb-4 text-gradient">
+              Our Impact
+            </h2>
+            <p className="text-xl text-gray-300">Technology with purpose</p>
+          </motion.header>
+
+          <div className="grid gap-16">
+            {/* Impact Story */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="grid lg:grid-cols-2 gap-10 items-center"
+            >
+              {/* Image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src={News}
+                  alt="Palliative Care App"
+                  className="w-full h-auto"
+                />
+              </div>
+
+              {/* Text */}
+              <div>
+                <h3 className="text-3xl font-semibold text-white mb-4">
+                  Smart Care App
+                </h3>
+                <p className="text-gray-300 mb-4">
+                  Developed in collaboration with Makkaraparamba Palliative Care, this intuitive solution supports caregivers and medical professionals in managing patients more effectively.
+                </p>
+                <p className="text-gray-400 text-sm">
+                  The app's unveiling at the 'Arike' event was graced by Mr. Muhammad Musthafa and Dr. P. Unneen, underscoring its significance in healthcare innovation.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Awards Section */}
+      <section className="relative py-20 bg-dark overflow-hidden">
+        {/* <div className="absolute inset-0 opacity-10 pointer-events-none select-none">
+          <div className="w-full text-center py-8 text-primary text-xs font-mono tracking-widest">
+            01000001 01110111 01100001 01110010 01100100 00100000 01010111 01101001
+            01101110 01101110 01100101 01110010 01110011 00100000 00110010 00110000
+            00110010 00110101
+          </div>
+        </div> */}
+
+        <div className="container mx-auto px-4 relative">
+          <motion.header
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold font-orbitron mb-4 text-gradient">
+              Recognition
+            </h2>
+            <p className="text-xl text-gray-300">Celebrating our achievements</p>
+          </motion.header>
+
+          {/* Award Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="glass-card grid lg:grid-cols-3 gap-10 p-10 rounded-2xl border border-white/10"
+          >
+            {/* Badge */}
+            <div className="w-28 h-28 mx-auto bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-4xl text-white shadow-lg">
+              🏆
+            </div>
+
+            {/* Content */}
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Promising Startup Award 2025
+              </h3>
+              <p className="text-primary font-semibold mb-1">
+                Promising Kerala Entrepreneurs Awards
+              </p>
+              <p className="text-gray-400 text-sm mb-4">
+                July 5, 2025 | Kochi, Kerala
+              </p>
+              <p className="text-gray-300">
+                A recognition of innovation, resilience, and the entrepreneurial spirit — honoring the passion and vision that drives Neuraq forward.
+              </p>
+            </div>
+
+            {/* Image */}
+            <div className="rounded-xl overflow-hidden shadow-xl">
+              <img
+                src={Award}
+                alt="Award Image"
+                className="w-full h-auto"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
 
       {/* Team Section */}
       <section className="relative py-20" aria-labelledby="team-heading">
@@ -297,7 +507,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section
       <section className="relative py-20 bg-darker" aria-labelledby="impact-heading">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -349,10 +559,10 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="relative py-20 text-center">
+      <section className="relative text-white py-20 text-center">
         <div className="container mx-auto px-4">
           <motion.section
             initial={{ opacity: 0, y: 30 }}

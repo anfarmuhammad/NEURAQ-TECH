@@ -5,7 +5,7 @@ import HomeAb from "../assets/images/homeab.svg";
 
 function AboutSection() {
   return (
-    <section id="about" className="relative overflow-hidden bg-black text-white py-20">
+    <section className="relative overflow-hidden text-white py-20 backdrop-blur-xl  dark:bg-black/95">
 
       {/* === Animated Tech Overlay === */}
       <div className="absolute inset-0 z-0">
@@ -135,10 +135,7 @@ function AboutSection() {
       </div>
 
       {/* === Binary Background === */}
-      <div className="absolute bottom-2 w-full text-center opacity-10 text-xs font-mono text-cyan-400 animate-pulse">
-        01001110 01100101 01110101 01110010 01100001 01110001 00100000 01010100 01100101 01100011
-        01101000 01101110 01101111 01101100 01101111 01100111 01101001 01100101 01110011
-      </div>
+
     </section>
   );
 }

@@ -37,7 +37,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    
+
     try {
       const response = await fetch('https://formspree.io/f/mqakegjd', {
         method: 'POST',
@@ -61,7 +61,16 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-black  text-light pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 text-center  bg-gradient-to-br from-primary/10 to-accent/10">
+      <section
+        className="
+    py-20
+    text-center
+    text-white
+    bg-gradient-to-br from-primary/10 to-accent/10
+    bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]
+    bg-cover bg-center bg-repeat opacity-90
+  "
+      >
         <div className="container mx-auto px-4">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
@@ -71,6 +80,7 @@ const Contact = () => {
           >
             Let's Build the Future Together
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -81,6 +91,7 @@ const Contact = () => {
           </motion.p>
         </div>
       </section>
+
 
       {/* Contact Section */}
       <section className="relative py-20">
@@ -100,7 +111,7 @@ const Contact = () => {
                 We're available through multiple channels to ensure you can reach us conveniently.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-6 text-white">
                 {contactMethods.map((method, index) => (
                   <motion.div
                     key={index}
@@ -115,7 +126,7 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-white mb-2">{method.title}</h3>
                       {method.link ? (
-                        <a 
+                        <a
                           href={method.link}
                           className="text-gray-300 hover:text-primary transition-colors whitespace-pre-line"
                         >
@@ -132,7 +143,7 @@ const Contact = () => {
               {/* Social Links */}
               <div className="mt-8 pt-8 border-t border-gray-800">
                 <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
-                <div className="flex gap-4">
+                <div className="flex gap-4 text-white">
                   {['Twitter', 'LinkedIn', 'GitHub', 'Instagram'].map((social) => (
                     <a
                       key={social}
@@ -229,9 +240,9 @@ const Contact = () => {
                   ></textarea>
                 </div>
 
-                <TechButton 
+                <TechButton
                   type="submit"
-                  variant="primary" 
+                  variant="primary"
                   size="large"
                   icon={Send}
                   className="w-full"
@@ -245,7 +256,14 @@ const Contact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative text-white py-20 bg-gradient-to-br from-primary to-accent text-dark">
+      <section
+        className="
+    relative text-white py-20
+    bg-gradient-to-br from-primary to-accent
+    bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]
+    bg-cover bg-center bg-repeat
+  "
+      >
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -258,6 +276,7 @@ const Contact = () => {
             <p className="text-xl mb-8 max-w-2xl mx-auto">
               Schedule a personalized consultation with our experts to discuss your specific needs.
             </p>
+
             <TechButton
               variant="secondary"
               size="large"
@@ -268,6 +287,7 @@ const Contact = () => {
           </motion.div>
         </div>
       </section>
+
     </div>
   );
 };

@@ -7,7 +7,7 @@ function NewsSection() {
   return (
     <section
       id="news-section"
-      className="news-column-section relative py-20 bg-[#050b1a] text-white overflow-hidden"
+      className="news-column-section relative py-20 bg-black text-white overflow-hidden"
     >
       <div className="container mx-auto px-6">
         {/* Section Header */}
@@ -21,10 +21,10 @@ function NewsSection() {
         </div>
 
         {/* News Columns */}
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2  gap-10">
           {/* Article 1 */}
           <article
-            className="news-article bg-[#0b1324] p-6 rounded-2xl border border-gray-800 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+            className="news-article   p-6 rounded-2xl border border-gray-800 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             data-scroll
           >
             <div className="flex items-center justify-between mb-3 text-sm text-gray-400">
@@ -75,7 +75,7 @@ function NewsSection() {
 
           {/* Article 2 */}
           <article
-            className="news-article bg-[#0b1324] p-6 rounded-2xl border border-gray-800 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+            className="news-article dark:bg-black/95 p-6 rounded-2xl border border-gray-800 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             data-scroll
           >
             <div className="flex items-center justify-between mb-3 text-sm text-gray-400">
@@ -130,11 +130,11 @@ function NewsSection() {
 
       {/* Binary Background Effect */}
       <div className="absolute bottom-0 w-full overflow-hidden text-center opacity-10 text-green-400 animate-pulse">
-        <span className="text-xs md:text-sm">
+        {/* <span className="text-xs md:text-sm">
           01001110 01100101 01110101 01110010 01100001 01110001 00100000 01010100
           01100101 01100011 01101000 01101110 01101111 01101100 01101111 01100111
           01101001 01100101 01110011
-        </span>
+        </span> */}
       </div>
     </section>
   );

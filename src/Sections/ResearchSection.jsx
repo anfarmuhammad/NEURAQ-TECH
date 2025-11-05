@@ -7,7 +7,7 @@ function ResearchSection() {
   return (
     <section
       id="research"
-      className="relative overflow-hidden bg-[#030b17] text-white py-20"
+      className="relative overflow-hidden dark:bg-black/95 text-white py-20"
     >
       {/* === Background Image with Parallax-like Effect === */}
       <div
@@ -149,11 +149,11 @@ function ResearchSection() {
       </div>
 
       {/* === Binary Code Background === */}
-      <div className="absolute bottom-2 w-full text-center opacity-10 text-xs font-mono text-cyan-400 animate-pulse">
+      {/* <div className="absolute bottom-2 w-full text-center opacity-10 text-xs font-mono text-cyan-400 animate-pulse">
         01010010 01100101 01110011 01100101 01100001 01110010 01100011 01101000
         00100000 00100026 00100000 01000100 01100101 01110110 01100101 01101100
         01101111 01110000 01101101 01100101 01101110 01110100
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -63,37 +63,6 @@ const Innovation = () => {
 
   return (
     <div className="min-h-screen bg-black text-light pt-20">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="container mx-auto px-4 text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold font-orbitron mb-6 text-gradient"
-          >
-            HeuLink Initiative
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
-          >
-            Connect | Communicate | Conquer
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="inline-flex items-center gap-2 glass-card px-6 py-3"
-          >
-            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-green-400 font-orbitron">Active Development</span>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Problem Section */}
       <section className="relative py-20 bg-darker">
         <div className="container mx-auto px-4">
