@@ -170,10 +170,10 @@ export const CyberHero = () => {
 
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ 
+        const renderer = new THREE.WebGLRenderer({
           canvas: particlesRef.current,
           alpha: true,
-          antialias: true 
+          antialias: true
         });
 
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -182,11 +182,11 @@ export const CyberHero = () => {
         // Create particles
         const particlesGeometry = new THREE.BufferGeometry();
         const particlesCount = 1500;
-        
+
         const posArray = new Float32Array(particlesCount * 3);
         const colorArray = new Float32Array(particlesCount * 3);
 
-        for(let i = 0; i < particlesCount * 3; i++) {
+        for (let i = 0; i < particlesCount * 3; i++) {
           posArray[i] = (Math.random() - 0.5) * 10;
           colorArray[i] = Math.random();
         }
@@ -247,17 +247,17 @@ export const CyberHero = () => {
       </div>
 
       {/* Quantum Particles */}
-      <canvas 
-        ref={particlesRef} 
-        className="quantum-particles" 
+      <canvas
+        ref={particlesRef}
+        className="quantum-particles"
         id="quantum-particles"
       />
 
       {/* Main Content */}
       <div className="cyber-content">
         <div className="cyber-text">
-          <motion.h1 
-            className="cyber-title glitch" 
+          <motion.h1
+            className="cyber-title glitch"
             data-text="TECH"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -266,17 +266,17 @@ export const CyberHero = () => {
             <span className="title-line">TECH</span>
             <span className="title-line">NEURAQ</span>
           </motion.h1>
-          
-          <motion.p 
-            className="cyber-subtitle"
+
+          <motion.p
+            className="cyber-subtitle font-orbitron text-[1.2rem] leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
             Redefining the boundaries with AI || We make your online identity
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="cyber-cta"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -289,7 +289,7 @@ export const CyberHero = () => {
                 <div className="btn-sparkles"></div>
               </button>
             </Link>
-            
+
             <Link to="/contact">
               <button className="cyber-btn secondary">
                 <span className="btn-text">Let's Collaborate</span>
@@ -309,7 +309,7 @@ export const CyberHero = () => {
       </div>
 
       {/* Cyber Scroll Indicator */}
-      <motion.div 
+      <motion.div
         className="cyber-scroll"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

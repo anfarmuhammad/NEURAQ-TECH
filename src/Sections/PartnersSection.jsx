@@ -1,86 +1,69 @@
 import React from "react";
-import BharatGas  from "../assets/images/2.svg"
-import Zieo from "../assets/images/1.svg"
-import  EuroMarketing from "../assets/images/3.svg"
-import  PalliativeCare from "../assets/images/4.svg"
-import  Aljamia from "../assets/images/5.svg"
-import   BugHoster from "../assets/images/6.svg"
- 
-
-
-
+import BharatGas from "../assets/images/2.svg";
+import Zieo from "../assets/images/1.svg";
+import EuroMarketing from "../assets/images/3.svg";
+import PalliativeCare from "../assets/images/4.svg";
+import Aljamia from "../assets/images/5.svg";
+import BugHoster from "../assets/images/6.svg";
 
 function PartnersSection() {
-    const partners = [
-        BharatGas,
-        Zieo,
-        EuroMarketing,
-        PalliativeCare,
-        Aljamia,
-        BugHoster,
-    ];
+  const partners = [
+    BharatGas,
+    Zieo,
+    EuroMarketing,
+    PalliativeCare,
+    Aljamia,
+    BugHoster,
+  ];
 
-    return (
-        <section
-            id="partners"
-            className="relative bg-[#050b16] text-white py-20 overflow-hidden"
-        >
-            <div className="container mx-auto px-4">
-                {/* Section Header */}
-                <div
-                    className="text-center mb-12 animate-fadeIn text-white"
-                    data-scroll
-                >
-                    <h2 className="text-4xl font-bold text-cyan-400 drop-shadow-lg">
-                        Our Collaborators
-                    </h2>
-                    <p className="text-gray-400 text-lg mt-2">
-                        Trusted by Industry Kings
-                    </p>
-                </div>
+  return (
+    <section
+      id="partners"
+      className="relative bg-black text-white py-30 overflow-hidden"
+    >
+      <div className="container mx-auto px-6">
 
-                {/* Scrolling Logos */}
-                <div className="overflow-hidden relative">
-                    <div
-                        className="flex gap-10 animate-scroll whitespace-nowrap"
-                        data-scroll
-                    >
-                        {/* Original set */}
-                        {partners.map((src, index) => (
-                            <div
-                                key={`p1-${index}`}
-                                className="flex-shrink-0 w-40 h-24 flex justify-center items-center bg-[#0a1325] rounded-xl border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
-                            >
-                                <img
-                                    src={src}
-                                    alt={`Partner ${index + 1}`}
-                                    className="object-contain w-24 h-12 opacity-80 hover:opacity-100 transition-opacity duration-300"
-                                />
-                            </div>
-                        ))}
+        {/* SECTION TITLE */}
+        <div className="text-center mb-14">
+          <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#39ff14] to-[#22ce33] bg-clip-text text-transparent drop-shadow-lg">
+            Our Collaborators
+          </h2><br />
+          <p className="font-orbitron text-lg  mt-2 font-light tracking-wide">
+            Trusted by Industry Leaders
+          </p>
+        </div>
 
-                        {/* Duplicate set for seamless loop */}
-                        {partners.map((src, index) => (
-                            <div
-                                key={`p2-${index}`}
-                                className="flex-shrink-0 w-40 h-24 flex justify-center items-center bg-[#0a1325] rounded-xl border border-cyan-500/20 shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
-                            >
-                                <img
-                                    src={src}
-                                    alt={`Partner ${index + 7}`}
-                                    className="object-contain w-24 h-12 opacity-80 hover:opacity-100 transition-opacity duration-300"
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
+        {/* SCROLLING LOGOS */}
+        <div className="overflow-hidden relative">
+          <div className="flex gap-14 animate-scroll whitespace-nowrap">
 
-            {/* Subtle glowing background effect */}
-            <div className="absolute inset-0 -z-10 bg-gradient-to-t from-transparent via-[#0a1325]/50 to-transparent blur-3xl opacity-30" />
-        </section>
-    );
+            {partners.map((src, i) => (
+              <div
+                key={`original-${i}`}
+                className="flex-shrink-0 w-40 h-24 flex justify-center items-center opacity-70 hover:opacity-100 transition duration-300"
+              >
+                <img src={src} alt={`Partner ${i+1}`} className="object-contain w-28 h-14" />
+              </div>
+            ))}
+
+            {partners.map((src, i) => (
+              <div
+                key={`copy-${i}`}
+                className="flex-shrink-0 w-40 h-24 flex justify-center items-center opacity-70 hover:opacity-100 transition duration-300"
+              >
+                <img src={src} alt={`Partner ${i+7}`} className="object-contain w-28 h-14" />
+              </div>
+            ))}
+
+          </div>
+        </div>
+
+      </div>
+
+      {/* SMOOTH NEON GLOW BACKDROP */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-transparent via-[#001a09]/40 to-transparent blur-3xl opacity-40" />
+    </section>
+  );
 }
 
 export default PartnersSection;
-

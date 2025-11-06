@@ -92,7 +92,6 @@ const Contact = () => {
         </div>
       </section>
 
-
       {/* Contact Section */}
       <section className="relative py-20">
         <div className="container mx-auto px-4">

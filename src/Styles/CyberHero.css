@@ -9,7 +9,8 @@
   background: #000;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
-} 
+}
+
 .quantum-particles {
   position: absolute;
   top: 0;
@@ -24,9 +25,6 @@
   position: relative;
   z-index: 2;
 }
-
-
-
 
 /* Holographic Interface */
 .holographic-interface {
@@ -44,7 +42,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     linear-gradient(rgba(57, 255, 20, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(57, 255, 20, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -52,8 +50,13 @@
 }
 
 @keyframes gridMove {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(50px, 50px); }
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(50px, 50px);
+  }
 }
 
 .holographic-line {
@@ -80,8 +83,17 @@
 }
 
 @keyframes scanLine {
-  0%, 100% { opacity: 0.1; transform: scaleX(0.8); }
-  50% { opacity: 0.6; transform: scaleX(1); }
+
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scaleX(0.8);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scaleX(1);
+  }
 }
 
 .holographic-node {
@@ -112,8 +124,17 @@
 }
 
 @keyframes nodePulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.5); }
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
 }
 
 /* Quantum Particles */
@@ -127,6 +148,40 @@
 }
 
 /* Cyber Content */
+.cyber-title {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: 700;
+  text-align: center;
+  line-height: 0.9;
+}
+
+.cyber-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: clamp(3.8rem, 11vw, 8.5rem);
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.cyber-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.cyber-title {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+  line-height: 0.9;
+}
+
 .cyber-content {
   position: relative;
   z-index: 10;
@@ -146,6 +201,8 @@
   display: block;
   position: relative;
 }
+
+
 
 .glitch {
   position: relative;
@@ -174,13 +231,23 @@
 }
 
 @keyframes glitch-1 {
-  0% { clip-path: inset(20% 0 50% 0); }
-  100% { clip-path: inset(80% 0 10% 0); }
+  0% {
+    clip-path: inset(20% 0 50% 0);
+  }
+
+  100% {
+    clip-path: inset(80% 0 10% 0);
+  }
 }
 
 @keyframes glitch-2 {
-  0% { clip-path: inset(50% 0 20% 0); }
-  100% { clip-path: inset(10% 0 80% 0); }
+  0% {
+    clip-path: inset(50% 0 20% 0);
+  }
+
+  100% {
+    clip-path: inset(10% 0 80% 0);
+  }
 }
 
 .cyber-subtitle {
@@ -304,9 +371,19 @@
 }
 
 @keyframes dataStream {
-  0% { top: -100%; opacity: 0; }
-  50% { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
 }
 
 /* Cyber Scroll Indicator */
@@ -351,8 +428,17 @@
 }
 
 @keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
-  50% { opacity: 1; transform: scaleY(1); }
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(0.5);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
 }
 
 /* Responsive Design */
@@ -361,12 +447,12 @@
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .cyber-btn {
     padding: 0.8rem 2rem;
     font-size: 0.9rem;
   }
-  
+
   .cyber-title {
     font-size: clamp(3rem, 10vw, 6rem);
   }
@@ -376,7 +462,7 @@
   .cyber-content {
     padding: 0 1rem;
   }
-  
+
   .cyber-subtitle {
     font-size: 1rem;
   }

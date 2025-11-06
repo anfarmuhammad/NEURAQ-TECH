@@ -34,7 +34,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black text-light relative overflow-hidden">
+    <footer className="backdrop-blur-xl  dark:bg-black/95 text-light relative overflow-hidden">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
           {/* Brand Section */}

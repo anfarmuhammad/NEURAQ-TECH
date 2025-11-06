@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Profile1 from "../assets/images/profile-1.svg"
-import Profile2 from "../assets/images/profile-2.svg"
-import Profile3 from "../assets/images/profile-3.svg"
+import Profile1 from "../assets/images/profile-1.svg";
+import Profile2 from "../assets/images/profile-2.svg";
+import Profile3 from "../assets/images/profile-3.svg";
 import {
   FaLinkedinIn,
   FaInstagram,
@@ -16,7 +16,7 @@ function TeamSection() {
     {
       name: "Mr. Mohammed Shaheen KP",
       title: "CEO & Founder",
-      img: Profile1, // ✅ fixed here
+      img: Profile1,
       bio: "A dynamic tech leader and current BS Data Science student at IIT Madras. With strong leadership skills and hands-on experience in software development, Shaheen bridges innovation and execution.",
       tags: ["Founder", "Leadership"],
       social: [
@@ -52,105 +52,114 @@ function TeamSection() {
   ];
 
   return (
-    <section id="team" className="relative bg-black text-white py-20 overflow-hidden">
+    <section id="team" className="relative py-20 bg-black text-white overflow-hidden">
       <div className="container mx-auto px-6">
+
         {/* Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl font-bold mb-2 text-cyan-400">Our Visionaries</h2>
-          <p className="text-gray-400">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#39ff14] to-[#22ce33] bg-clip-text text-transparent">
+            Our Visionaries
+          </h2>
+          <p className="font-orbitron text-lg mt-4 text-white">
             The brilliant minds shaping the future of digital identity
           </p>
-        </motion.div>
+        </div>
 
-        {/* Team Grid */}
-        <div className="grid md:grid-cols-3 gap-12">
-          {teamMembers.map((member, index) => (
-            <motion.div
-              key={index}
-              className="relative bg-gradient-to-b from-slate-900 to-black rounded-2xl p-6 shadow-lg border border-slate-700 hover:border-cyan-500 transition-all duration-300"
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-            >
-              {/* Image */}
-              <div className="relative overflow-hidden rounded-xl group">
-                <img
-                  src={member.img}
-                  alt={member.name}
-                  className="w-full h-64 object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center p-4">
-                  <div className="flex gap-4">
-                    {member.social.map((s, i) => (
-                      <a
-                        key={i}
-                        href={s.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-white hover:text-cyan-400 text-lg transition"
-                      >
-                        {s.icon}
-                      </a>
-                    ))}
+        {/* Team Grid (Same layout as the product cards) */}
+        <div className="flex justify-center">
+          <div className="grid w-[85%] md:grid-cols-3 gap-12 place-items-center">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="relative bg-white/5 border border-gray-800 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+              >
+                {/* Image + Hover Social Overlay */}
+                <div className="relative overflow-hidden rounded-t-2xl">
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="w-full h-64 object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-black/70 opacity-0 hover:opacity-100 transition-all duration-500 flex items-center justify-center p-4">
+                    <div className="flex gap-4 text-xl">
+                      {member.social.map((s, i) => (
+                        <a
+                          key={i}
+                          href={s.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-white hover:text-[#39ff14] transition"
+                        >
+                          {s.icon}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Details */}
-              <div className="mt-6 text-center">
-                <h3 className="text-xl font-semibold text-cyan-400">{member.name}</h3>
-                <p className="text-gray-400 text-sm">{member.title}</p>
-                <p className="mt-4 text-gray-300 text-sm leading-relaxed">{member.bio}</p>
+                {/* Text Content */}
+                <div className="p-6 text-center">
+                  <h3 className="text-2xl font-bold ">{member.name}</h3>
+                  <p className="text-gray-200 font-orbitron text-sm mb-3">{member.title}</p>
 
-                <div className="flex flex-wrap justify-center gap-2 mt-4">
-                  {member.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 rounded-full px-3 py-1 text-xs"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  <p className="text-gray-300 font-orbitron text-lg  leading-relaxed mb-4">{member.bio}</p>
+
+                  {/* Tags */}
+                  {member.tags && (
+                    <div className="flex flex-wrap justify-center gap-2 mt-2">
+                      {member.tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 text-xs font-orbitron rounded-full   bg-white/5"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              </div>
-
-              {/* Circuit Effect */}
-              <div className="absolute top-2 left-2 w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-              <div className="absolute bottom-2 right-2 w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-14">
           <a
             href="about.html"
-            className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold px-6 py-3 rounded-full transition"
+            className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full
+            overflow-hidden group
+            bg-gradient-to-r from-[#39ff14] to-[#00f2fe]
+            text-black font-semibold tracking-wide
+            shadow-[0_0_18px_rgba(0,255,200,0.35)]
+            transition-transform duration-300 hover:scale-[1.03]"
           >
-            Meet the Full Team
-            <svg
-              viewBox="0 0 24 24"
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M5 12H19M12 5L19 12L12 19" />
-            </svg>
-          </a>
-        </div>
-      </div>
+            <span className="relative z-10 flex items-center gap-3">
+              Meet the Full Team
+              <svg
+                viewBox="0 0 24 24"
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M5 12H19M12 5L19 12L12 19" />
+              </svg>
+            </span>
 
-      {/* Binary Background */}
-      <div className="absolute bottom-0 left-0 w-full text-center text-cyan-600/10 text-xs select-none">
-        <span>
-          01010100 01100101 01100001 01101101 00100000 01001110 01100101 01110101 01110010 01100001 01110001
-        </span>
+            {/* Hover Shine Overlay */}
+            <span
+              className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left
+              bg-white/25 transition-transform duration-500 ease-out"
+            ></span>
+          </a>
+
+        </div>
+
       </div>
     </section>
   );
