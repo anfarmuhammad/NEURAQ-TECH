@@ -1,5 +1,5 @@
-@import "tailwindcss";
 /* src/index.css */
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;600;700&display=swap');
 
 /* Auto Scroll Animation */
@@ -16,7 +16,6 @@
 .animate-scroll {
     animation: scroll 18s linear infinite;
 }
-
 
 .font-orbitron {
     font-family: 'Orbitron', sans-serif;

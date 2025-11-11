@@ -8,6 +8,7 @@ import Profile from "../assets/images/profile-1.svg";
 import Signature from "../assets/images/sin.png";
 import News from "../assets/images/blog-2.svg"
 import Award from "../assets/images/HAND.svg"
+import { FaTrophy } from "react-icons/fa";
 import Profile1 from "../assets/images/profile-1.svg"
 import Profile2 from "../assets/images/profile-2.svg"
 import Profile3 from "../assets/images/profile-3.svg"
@@ -17,6 +18,7 @@ import Profile6 from "../assets/images/profile-5.svg"
 import Profile7 from "../assets/images/profile-7.svg"
 import Profile8 from "../assets/images/profile-9.svg"
 import Profile9 from "../assets/images/profile-8.svg"
+
 
 
 const About = () => {
@@ -368,144 +370,105 @@ const About = () => {
         </div>
       </section>
 
-      {/* Awards Section */}
-      <section className="relative py-20 bg-dark overflow-hidden">
-        {/* <div className="absolute inset-0 opacity-10 pointer-events-none select-none">
-          <div className="w-full text-center py-8 text-primary text-xs font-mono tracking-widest">
-            01000001 01110111 01100001 01110010 01100100 00100000 01010111 01101001
-            01101110 01101110 01100101 01110010 01110011 00100000 00110010 00110000
-            00110010 00110101
+      {/* Award section */}
+      <section className="w-full min-h-screen bg-black text-white py-20 flex flex-col items-center">
+        {/* Heading */}
+        <h2 className="text-5xl font-extrabold text-green-400 tracking-wide mb-3">
+          Recognition
+        </h2>
+        <p className="text-gray-400 text-lg mb-16">
+          Celebrating our achievements
+        </p>
+
+        {/* Content Box */}
+        <div className="max-w-6xl w-full bg-[#111] border border-gray-800 rounded-3xl p-10 flex items-center gap-10 
+            lg:flex-row flex-col transition-all duration-300">
+
+          {/* Left Content */}
+          <div className="flex-1 flex flex-col gap-6">
+            <div className="w-24 h-24 bg-gradient-to-br from-green-400 to-cyan-400 rounded-full flex items-center justify-center">
+              <FaTrophy className="text-5xl text-white" />
+            </div>
+
+            <h3 className="text-3xl font-bold">
+              Promising Startup Award 2025
+            </h3>
+
+            <p className="text-xl font-semibold text-gray-300">
+              Promising Kerala Entrepreneurs Awards
+            </p>
+
+            <p className="text-gray-500">
+              July 5, 2025 | Kochi, Kerala
+            </p>
+
+            <p className="text-gray-400 leading-relaxed">
+              This recognition celebrates innovation, resilience, and the
+              entrepreneurial spirit. We’re proud to stand among Kerala’s most
+              inspiring startups. For us at Neuraq, this award is more than a
+              symbol. It reflects countless hours of effort, problem-solving,
+              and belief in our mission.
+            </p>
           </div>
-        </div> */}
 
-        <div className="container mx-auto px-4 relative">
-          <motion.header
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold font-orbitron mb-4 text-gradient">
-              Recognition
-            </h2>
-            <p className="text-xl text-gray-300">Celebrating our achievements</p>
-          </motion.header>
-
-          {/* Award Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="glass-card grid lg:grid-cols-3 gap-10 p-10 rounded-2xl border border-white/10"
-          >
-            {/* Badge */}
-            <div className="w-28 h-28 mx-auto bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-4xl text-white shadow-lg">
-              🏆
-            </div>
-
-            {/* Content */}
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Promising Startup Award 2025
-              </h3>
-              <p className="text-primary font-semibold mb-1">
-                Promising Kerala Entrepreneurs Awards
-              </p>
-              <p className="text-gray-400 text-sm mb-4">
-                July 5, 2025 | Kochi, Kerala
-              </p>
-              <p className="text-gray-300">
-                A recognition of innovation, resilience, and the entrepreneurial spirit — honoring the passion and vision that drives Neuraq forward.
-              </p>
-            </div>
-
-            {/* Image */}
-            <div className="rounded-xl overflow-hidden shadow-xl">
-              <img
-                src={Award}
-                alt="Award Image"
-                className="w-full h-auto"
-              />
-            </div>
-          </motion.div>
+          {/* Right Image */}
+          <div className="flex-1 w-full flex justify-center">
+            <img
+              src={Award}
+              alt="Award Ceremony"
+              className="rounded-2xl shadow-[0_0_40px_rgba(0,255,200,0.25)] w-full object-cover max-h-[430px]"
+            />
+          </div>
         </div>
       </section>
 
-
       {/* Team Section */}
-      <section className="relative py-20" aria-labelledby="team-heading">
+      <section className="relative py-20 bg-black" aria-labelledby="team-heading">
         <div className="container mx-auto px-4">
-          <motion.header
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 id="team-heading" className="text-3xl md:text-4xl font-bold font-orbitron mb-4 text-gradient">
+          {/* Heading */}
+          <div className="text-center mb-14">
+            <h2
+              id="team-heading"
+              className="text-4xl font-bold font-orbitron mb-3 text-green-400"
+            >
               Our Team
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-gray-400 text-lg">
               The brilliant minds behind our technology
             </p>
-          </motion.header>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Team Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
             {teamMembers.map((member, index) => (
-              <motion.article
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass-card group hover:border-primary/50 transition-all duration-300"
+                className="bg-[#0d0d0d] rounded-xl border border-gray-800 shadow-lg text-center overflow-hidden w-full max-w-sm"
               >
-                <div className="relative mb-6 rounded-lg overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={`${member.name} - ${member.role}`}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-xl font-bold text-white">{member.name}</h3>
-                    <p className="text-primary font-orbitron text-sm">{member.role}</p>
-                  </div>
+                {/* Image */}
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-64 object-cover"
+                  loading="lazy"
+                />
 
-                  <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {Object.entries(member.social).map(([platform, url]) => (
-                      <a
-                        key={platform}
-                        href={url}
-                        className="w-8 h-8 bg-dark/80 rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-dark transition-all"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Follow ${member.name} on ${platform}`}
-                      >
-                        <span className="text-xs font-semibold">
-                          {platform === "linkedin" ? "in" : platform.charAt(0).toUpperCase()}
-                        </span>
-                      </a>
-                    ))}
-                  </div>
+                {/* Text */}
+                <div className="px-6 py-6">
+                  <h3 className="text-white font-semibold text-lg">{member.name}</h3>
+                  <p className="text-green-400 text-sm mb-3 font-orbitron">
+                    {member.role}
+                  </p>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    {member.bio}
+                  </p>
                 </div>
-
-                <p className="text-gray-300 mb-4 text-sm">{member.bio}</p>
-
-                <div className="flex flex-wrap gap-2">
-                  {member.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full border border-primary/20"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </motion.article>
+              </div>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* Stats Section
       <section className="relative py-20 bg-darker" aria-labelledby="impact-heading">
@@ -559,7 +522,7 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* CTA Section */}
       <section className="relative text-white py-20 text-center">
