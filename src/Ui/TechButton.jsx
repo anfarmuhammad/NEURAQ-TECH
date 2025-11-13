@@ -21,11 +21,11 @@ export const TechButton = ({
 
   const variants = {
     primary: `
-      text-white bg-gradient-to-r from-purple-500 to-indigo-500
-      shadow-[0_4px_15px_rgba(110,69,226,0.4)]
+      text-white 
+      
     `,
     secondary: `
-      text-purple-400 border border-purple-400 bg-transparent
+      text-purple-400 
       hover:text-black
     `
   };
@@ -43,23 +43,30 @@ export const TechButton = ({
   const ButtonInner = (
     <>
       {/* Text */}
-      <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
-        {children}
+      <span className="relative z-10 flex items-center gap-3 px-8 py-4 rounded-full 
+       overflow-hidden group 
+       bg-gradient-to-r from-[#39ff14] to-[#00f2fe]
+       text-white font-semibold tracking-wide
+       shadow-[0_0_18px_rgba(0,255,200,0.35)]
+       transition-transform duration-300 hover:scale-[1.03]">
+
+        <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
+          VIEW OUR BRAND STORY
+        </span>
+
+        {/* Icon */}
+        <ArrowRight className="relative z-10 ml-3 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+
+        {/* Overlay Hover Gradient (same as original) */}
+        <span
+          className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left
+          bg-white/25 transition-transform duration-500 ease-out"
+        ></span>
       </span>
-
-      {/* Icon */}
-      <Icon className="relative z-10 ml-3 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-
-      {/* Overlay Hover Gradient */}
-      <span className="
-        absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 
-        opacity-0 group-hover:opacity-100 transition-opacity duration-300
-      "></span>
     </>
+
   );
-
   const MotionTag = href ? motion.a : motion.button;
-
   return (
     <MotionTag
       href={href}
