@@ -93,7 +93,7 @@ export const Navbar = () => {
       {isMenuOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden absolute top-full left-0 w-full bg-[#0a0a0af2] backdrop-blur-lg border-t border-gray-800"
+          className="md:hidden absolute  font-orbitron top-full left-0 w-full bg-[#0a0a0af2] backdrop-blur-lg border-t border-gray-800"
         >
           <div className="flex flex-col space-y-4 p-6">
             {navItems.map(({ path, label }) => (
