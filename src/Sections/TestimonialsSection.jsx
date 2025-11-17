@@ -32,23 +32,21 @@ function TestimonialsSection() {
   return (
     <section id="testimonials" className="relative py-20 bg-black/95 text-white overflow-hidden">
       <div className="container mx-auto px-6">
-
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#39FF14]">Trusted Zone</h2><br />
-          <p className="font-orbitron text-lg   mt-2">What they say about us?</p>
+          <h2 className="text-4xl font-bold text-[#39FF14]">Trusted Zone</h2>
+          <p className="font-orbitron text-lg mt-2">What they say about us?</p>
         </div>
 
-        {/* Testimonials */}
-        {/* Testimonials */}
+        {/* Testimonials Grid */}
         <div className="flex justify-center">
           <div className="grid w-[85%] md:grid-cols-3 gap-12 place-items-center">
             {testimonials.map((t) => (
               <div
                 key={t.id}
                 className="relative bg-white/5 border border-white/10 rounded-2xl p-8 
-                flex flex-col justify-between min-h-[380px] shadow-xl hover:shadow-2xl 
-                hover:-translate-y-2 transition-all duration-500"
+                          flex flex-col justify-between min-h-[380px] shadow-xl hover:shadow-2xl 
+                          hover:-translate-y-2 transition-all duration-500 max-w-md w-full"
               >
                 {/* Floating glow dots */}
                 <div className="absolute top-6 right-8 w-2 h-2 bg-white/40 blur-sm rounded-full"></div>
@@ -56,7 +54,7 @@ function TestimonialsSection() {
 
                 {/* Quote Text */}
                 <Quote className="text-gray-300 mb-4" size={30} />
-                <p className="text-gray-300 leading-relaxed font-orbitron text-lg  border-l-2 border-[#39FF14] pl-4 italic">
+                <p className="text-gray-300 leading-relaxed font-orbitron text-lg border-l-2 border-[#39FF14] pl-4 italic">
                   {t.text}
                 </p>
 
@@ -69,14 +67,13 @@ function TestimonialsSection() {
                   />
                   <div>
                     <h4 className="font-semibold text-white">{t.name}</h4>
-                    <p className="font-orbitron text-sm  text-gray-400">{t.title}</p>
+                    <p className="font-orbitron text-sm text-gray-400">{t.title}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -51,7 +51,7 @@ export const TechButton = ({
        transition-transform duration-300 hover:scale-[1.03]">
 
         <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
-          VIEW OUR BRAND STORY
+           VIEW OUR BRAND STORY
         </span>
 
         {/* Icon */}

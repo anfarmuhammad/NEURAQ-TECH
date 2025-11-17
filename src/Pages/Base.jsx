@@ -1,8 +1,13 @@
 // src/pages/Base.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import { TechButton } from "../Ui/TechButton";
-import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import Pro1 from "../assets/images/pro-1.svg";
+import Pro2 from "../assets/images/pro-2.svg";
+import Pro3 from "../assets/images/pro-3.svg";
+import Pro5 from "../assets/images/pro-5.svg";
+import Pro6 from "../assets/images/pro-6.svg";
+import Pro7 from "../assets/images/pro-7.svg";
 
 const Base = () => {
   const products = [
@@ -10,175 +15,184 @@ const Base = () => {
       title: "Smart Care App",
       category: "Health Application",
       description: "The Future of Care in Your Hand",
-      image: "/assets/images/pro-1.svg",
+      image: Pro1,
       badge: "Featured",
       link: "https://care.neuraq.in/",
-      tags: [],
+      buttonColor: "#39ff14",
     },
     {
       title: "TBGS Track",
       category: "Company Management Software",
       description: "We've developed their entire management system",
-      image: "/assets/images/pro-2.svg",
+      image: Pro2,
       badge: null,
       link: "#",
-      tags: [],
+      buttonColor: "#39ff14",
     },
     {
       title: "Academic Website",
       category: "Education Platform",
       description: "Level up your Academy in Digital World",
-      image: "/assets/images/pro-4.svg",
+      image: Pro3,
       badge: "New",
       link: "https://najmulhuda.com/",
-      tags: [],
+      buttonColor: "#39ff14",
     },
     {
       title: "Resort Website",
       category: "Hospitality",
       description: "Level up your Digital World",
-      image: "/assets/images/pro-5.svg",
+      image: Pro5,
       badge: null,
       link: "",
-      tags: [],
+      buttonColor: "#39ff14",
     },
     {
       title: "Euro Marketing",
       category: "Business Website",
       description: "Level up your Digital World",
-      image: "/assets/images/pro-6.svg",
+      image: Pro6,
       badge: null,
       link: "https://euromarketing.in/",
-      tags: [],
+      buttonColor: "#39ff14",
     },
     {
       title: "Portfolio Website",
       category: "Personal Portfolio",
       description: "Level up your Digital World",
-      image: "/assets/images/pro-7.svg",
+      image: Pro7,
       badge: null,
       link: "https://arunjithperambra.in/",
-      tags: [],
+      buttonColor: "#39ff14",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-dark text-light pt-20">
-      {/* Hero Section */}
-      <section className="relative py-20 text-center">
+    <div className="min-h-screen bg-black text-white pt-20">
+
+      {/* HERO TITLE */}
+      <section className="text-center py-20">
         <div className="container mx-auto px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold font-orbitron mb-6 text-gradient"
-            aria-label="Our Innovations"
-          >
+          <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#39ff14] to-[#22ce33] bg-clip-text text-transparent">
             Our Innovations
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
-            aria-label="Cutting-edge solutions transforming digital identity"
-          >
+          </h1><br />
+          <p className="font-orbitron text-lg mt-4 text-white">
             Cutting-edge solutions transforming digital identity
-          </motion.p>
+          </p>
         </div>
       </section>
 
-      {/* Products Grid */}
-      <section className="relative py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass-card group hover:border-primary/50 transition-all duration-300 overflow-hidden"
-              >
-                {/* Product Image */}
-                <div className="relative h-48 overflow-hidden rounded-t-lg">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                  {/* Badge */}
-                  {product.badge && (
-                    <div className="absolute top-4 right-4 bg-gradient-primary text-dark px-3 py-1 rounded-full text-xs font-bold font-orbitron uppercase">
-                      {product.badge}
-                    </div>
-                  )}
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-dark/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <div className="text-white">
-                      <h3 className="text-xl font-bold mb-2">{product.title}</h3>
-                      <p className="text-gray-300 text-sm">{product.description}</p>
-                      {product.tags.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mt-3">
-                          {product.tags.map((tag, tagIndex) => (
-                            <span
-                              key={tagIndex}
-                              className="px-2 py-1 bg-primary/20 text-primary text-xs rounded border border-primary/30"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
+      {/* PRODUCTS GRID (EXACT SAME STYLE) */}
+      <section className="py-20 bg-white/5">
+        <div className="container mx-auto px-6">
+          <div className="flex justify-center">
+            <div className="grid w-[85%] md:grid-cols-3 gap-12 place-items-center">
+              {products.map((product, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="relative bg-white/5 border border-gray-800 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 product-card max-w-sm w-full"
+                >
+
+                  {/* IMAGE + BADGE + OVERLAY */}
+                  <div className="relative overflow-hidden rounded-t-2xl">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="w-full object-cover"
+                    />
+
+                    {/* BADGE SAME AS ORIGINAL */}
+                    {product.badge && (
+                      <div
+                        className="absolute top-3 right-3 px-3 py-1 rounded-full bg-gradient-to-r from-[#39ff14] to-[#00f2fe] text-black font-orbitron text-[0.75rem] font-bold shadow-[0_0_12px_rgba(57,255,20,0.45)]"
+                      >
+                        {product.badge}
+                      </div>
+                    )}
+
+                    {/* HOVER OVERLAY */}
+                    <div className="absolute inset-0 bg-black/70 opacity-0 hover:opacity-100 transition-all duration-500 flex items-center justify-center text-center p-4">
+                      <div>
+                        <h3 className="text-xl font-extrabold">
+                          {product.title}
+                        </h3>
+                        <p className="font-orbitron text-sm mt-2">
+                          {product.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Product Details & Button */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">{product.title}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{product.category}</p>
-                  <TechButton
-                    variant="primary"
-                    size="small"
-                    icon={ExternalLink}
-                    href={product.link}
-                    className="w-full"
-                  >
-                    View Details
-                  </TechButton>
-                </div>
-              </motion.div>
-            ))}
+                  {/* CONTENT + BUTTON */}
+                  <div className="p-6 text-center">
+                    <h3 className="text-2xl font-bold">{product.title}</h3>
+                    <p className="text-gray-200 font-orbitron text-sm mb-4">
+                      {product.category}
+                    </p>
+
+                    {/* NEON BUTTON EXACT MATCH */}
+                    <a
+                      href={product.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-orbitron text-sm transition-all duration-300 group hover:shadow-[0_0_18px_var(--btn-color)]"
+                      style={{
+                        "--btn-color": product.buttonColor,
+                        borderColor: product.buttonColor,
+                        color: product.buttonColor,
+                        borderStyle: "solid",
+                        borderWidth: "1.5px",
+                      }}
+                    >
+                      <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
+                        View Details
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <path d="M5 12H19M12 5L19 12L12 19" />
+                        </svg>
+                      </span>
+
+                      <span
+                        className="absolute inset-0 rounded-full scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-30 transition-all duration-500"
+                        style={{ background: product.buttonColor }}
+                      ></span>
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-20 bg-darker">
+      {/* CTA BOTTOM SECTION */}
+      <section className="py-20 bg-black/50">
         <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto glass-card p-12"
-            aria-label="Connect for Revolution"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold font-orbitron mb-4 text-gradient">
+          <div className="max-w-4xl mx-auto bg-white/5 border border-gray-800 rounded-2xl p-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4 ">
               Connect for Revolution
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <TechButton
-                variant="primary"
-                size="large"
-                href="https://wa.me/918089124307?text=I'm%20interested%20to%20the%20Collaborate"
-                aria-label="Connect via WhatsApp"
-              >
-                Connect Us
-              </TechButton>
-            </div>
-          </motion.div>
+            </h2><br />
+
+            <a
+              href="https://wa.me/918089124307?text=I'm%20interested%20to%20the%20Collaborate"
+              className="relative inline-flex items-center gap-3 px-10 py-4 rounded-full
+              overflow-hidden group
+              bg-gradient-to-r from-[#39ff14] to-[#00f2fe]
+              text-black font-semibold tracking-wide
+              shadow-[0_0_18px_rgba(0,255,200,0.35)]
+              transition-transform duration-300 hover:scale-[1.03]"
+            >
+              Connect Us
+            </a>
+          </div>
         </div>
       </section>
     </div>

@@ -1,6 +1,7 @@
 // src/pages/Innovation.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Accessibility,
   Languages,
@@ -14,8 +15,6 @@ import {
   AlertTriangle,
   CheckCircle,
 } from "lucide-react";
-
-import { TechButton } from "../Ui/TechButton";
 
 const Innovation = () => {
   const problems = {
@@ -77,15 +76,15 @@ const Innovation = () => {
     {
       date: "July 2025",
       title: "Pitching Completed",
-      description:
-        "Successfully presented HeuLink to investors and stakeholders on July 18.",
+      description: "Successfully presented HeuLink to investors and stakeholders on July 18.",
       status: "completed",
     },
   ];
 
   return (
     <div className="bg-black text-white overflow-hidden">
-      {/* ---------------- The Problem We Solve ---------------- */}
+
+      {/* The Problem We Solve */}
       <section className="relative py-20">
         <div className="container mx-auto px-4">
           <motion.header
@@ -103,7 +102,8 @@ const Innovation = () => {
           </motion.header>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Left Column: Disabilities */}
+
+            {/* Disabilities */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -111,10 +111,8 @@ const Innovation = () => {
               className="bg-[#0F0F0F] rounded-xl border border-gray-800 p-8 shadow-lg"
             >
               <div className="flex items-center gap-3 mb-8">
-                <Accessibility className="w-8 h-8 text-white" />
-                <h3 className="text-2xl font-bold">
-                  For Individuals with Speech Disabilities
-                </h3>
+                <Accessibility className="w-20 h-20 md:w-8 md:h-8 text-white" />
+                <h3 className="text-2xl font-bold">For Individuals with Speech Disabilities</h3>
               </div>
 
               <div className="space-y-6">
@@ -131,9 +129,7 @@ const Innovation = () => {
                         {item.icon}
                       </div>
                       <div>
-                        <h4 className="text-white text-xl font-bold mb-1">
-                          {item.title}
-                        </h4>
+                        <h4 className="text-white text-xl font-bold mb-1">{item.title}</h4>
                         <p className="text-gray-100 text-lg font-semibold font-orbitron leading-snug">
                           {item.description}
                         </p>
@@ -144,7 +140,7 @@ const Innovation = () => {
               </div>
             </motion.div>
 
-            {/* Right Column: Learners */}
+            {/* Learners */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -170,9 +166,7 @@ const Innovation = () => {
                         {item.icon}
                       </div>
                       <div>
-                        <h4 className="text-white text-xl font-bold mb-1">
-                          {item.title}
-                        </h4>
+                        <h4 className="text-white text-xl font-bold mb-1">{item.title}</h4>
                         <p className="text-gray-100 text-lg font-semibold font-orbitron leading-snug">
                           {item.description}
                         </p>
@@ -186,7 +180,7 @@ const Innovation = () => {
         </div>
       </section>
 
-      {/* ---------------- Project Roadmap ---------------- */}
+      {/* Project Roadmap */}
       <section className="relative py-20">
         <div className="container mx-auto px-4">
           <motion.div
@@ -204,7 +198,7 @@ const Innovation = () => {
           </motion.div>
 
           <div className="max-w-4xl mx-auto relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-800" />
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-800"></div>
 
             {roadmap.map((item, index) => (
               <motion.div
@@ -230,17 +224,11 @@ const Innovation = () => {
 
                 <div
                   className={`glass-card flex-1 p-6 border-l-4 bg-[#111]/60 backdrop-blur-md rounded-2xl shadow-lg border ${
-                    item.status === "completed"
-                      ? "border-green-500"
-                      : "border-[#2DFFAB]"
+                    item.status === "completed" ? "border-green-500" : "border-[#2DFFAB]"
                   }`}
                 >
-                  <div className="text-gray-100 font-orbitron mb-2">
-                    {item.date}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    {item.title}
-                  </h3>
+                  <div className="text-gray-100 font-orbitron mb-2">{item.date}</div>
+                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
                   <p className="text-gray-100 text-lg font-semibold font-orbitron leading-snug">
                     {item.description}
                   </p>
@@ -251,7 +239,7 @@ const Innovation = () => {
         </div>
       </section>
 
-      {/* ---------------- Join the Speech Revolution ---------------- */}
+      {/* Join the Speech Revolution */}
       <section className="relative py-20 bg-[#0A0A0A]">
         <div className="container mx-auto px-4 text-center">
           <motion.div
@@ -263,13 +251,28 @@ const Innovation = () => {
             <h2 className="text-3xl md:text-5xl font-extrabold mb-6 text-gray-100">
               Join the Speech Revolution
             </h2>
-            <p className="text-gray-300 text-xl font-semibold font-orbitron mb-8">
+            <p className="text-xl font-semibold mb-8 text-gray-300 font-orbitron">
               Be part of our journey to transform how the world communicates
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <TechButton variant="secondary" size="large">
-                Request Demo
-              </TechButton>
+              <Link
+                to="/career"
+                aria-label="Connect with us and join our team"
+                className="
+                  relative inline-flex items-center gap-3 px-8 py-4 rounded-full overflow-hidden group
+                  bg-gradient-to-r from-[#39ff14] to-[#00f2fe]
+                  text-black font-semibold tracking-wide font-orbitron
+                  shadow-[0_0_18px_rgba(0,255,200,0.35)]
+                  transition-transform duration-300 hover:scale-[1.03]
+                  focus:outline-none focus:ring-2 focus:ring-[#39ff14]
+                "
+              >
+                <span className="relative z-10 font-extrabold text-white flex items-center gap-3">
+                  Partner With Us →
+                </span>
+                <span className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left bg-white/25 transition-transform duration-500 ease-out" />
+              </Link>
             </div>
           </motion.div>
         </div>

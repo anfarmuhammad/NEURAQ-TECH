@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Pro1 from "../assets/images/pro-1.svg";
 import Pro2 from "../assets/images/pro-2.svg";
 import Pro3 from "../assets/images/pro-3.svg";
@@ -12,7 +13,7 @@ const products = [
       show: true,
       label: "Featured",
       style:
-        "bg-gradient-to-r  from-[#39ff14] to-[#00f2fe] text-black font-orbitron text-[0.75rem] font-bold shadow-[0_0_12px_rgba(57,255,20,0.45)]",
+        "bg-gradient-to-r from-[#39ff14] to-[#00f2fe] text-black font-orbitron text-[0.75rem] font-bold shadow-[0_0_12px_rgba(57,255,20,0.45)]",
     },
     description: "The Future of Care in Your Hand",
     link: "https://care.neuraq.in/",
@@ -66,7 +67,7 @@ const ProductsSection = () => {
             {products.map((product, index) => (
               <div
                 key={index}
-                className="relative bg-white/5 border border-gray-800 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 product-card"
+                className="relative bg-white/5 border border-gray-800 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 product-card max-w-sm w-full"
               >
                 <div className="relative overflow-hidden rounded-t-2xl">
                   <img
@@ -78,6 +79,7 @@ const ProductsSection = () => {
                   {product.badge?.show && (
                     <div
                       className={`absolute top-3 right-3 px-3 py-1 rounded-full ${product.badge.style}`}
+                      aria-label={product.badge.label}
                     >
                       {product.badge.label}
                     </div>
@@ -86,23 +88,17 @@ const ProductsSection = () => {
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black/70 opacity-0 hover:opacity-100 transition-all duration-500 flex items-center justify-center text-center p-4">
                     <div>
-                      <h3 className="text-2xl font-extrabold">
-                        {product.title}
-                      </h3>
-                      <p className="font-orbitron text-sm mt-2">
-                        {product.description}
-                      </p>
+                      <h3 className="text-2xl font-extrabold">{product.title}</h3>
+                      <p className="font-orbitron text-sm mt-2">{product.description}</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="p-6 text-center">
                   <h3 className="text-2xl font-bold">{product.title}</h3>
-                  <p className="text-gray-200 font-orbitron text-sm mb-4">
-                    {product.subtitle}
-                  </p>
+                  <p className="text-gray-200 font-orbitron text-sm mb-4">{product.subtitle}</p>
 
-                  {/* ✅ Improved Neon Hover Button */}
+                  {/* Neon Hover Button */}
                   <a
                     href={product.link}
                     target="_blank"
@@ -112,6 +108,8 @@ const ProductsSection = () => {
                       "--btn-color": product.buttonColor,
                       borderColor: product.buttonColor,
                       color: product.buttonColor,
+                      borderStyle: "solid",
+                      borderWidth: "1.5px",
                     }}
                   >
                     <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
@@ -141,8 +139,8 @@ const ProductsSection = () => {
 
         {/* View All Button */}
         <div className="text-center mt-14">
-          <a
-            href="base.html"
+          <Link
+            to="/base"
             className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full
             overflow-hidden group
             bg-gradient-to-r from-[#39ff14] to-[#00f2fe]
@@ -150,7 +148,7 @@ const ProductsSection = () => {
             shadow-[0_0_18px_rgba(0,255,200,0.35)]
             transition-transform duration-300 hover:scale-[1.03]"
           >
-            <span className="relative z-10 flex items-center gap-3">
+            <span className="relative text-white font-orbitron z-10 flex items-center gap-3">
               View All
               <svg
                 viewBox="0 0 24 24"
@@ -166,10 +164,9 @@ const ProductsSection = () => {
             {/* Sliding Hover Shine Overlay */}
             <span
               className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left
-             bg-white/25 transition-transform duration-500 ease-out"
+              bg-white/25 transition-transform duration-500 ease-out"
             ></span>
-          </a>
-
+          </Link>
         </div>
       </div>
     </section>

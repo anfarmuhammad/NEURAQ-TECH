@@ -1,8 +1,11 @@
+//anfarmk
+//src/Sectons/TeamSecton.jx
 import React from "react";
 import { motion } from "framer-motion";
 import Profile1 from "../assets/images/profile-1.svg";
 import Profile2 from "../assets/images/profile-2.svg";
 import Profile3 from "../assets/images/profile-3.svg";
+import { Link } from "react-router-dom";
 import {
   FaLinkedinIn,
   FaInstagram,
@@ -54,7 +57,6 @@ function TeamSection() {
   return (
     <section id="team" className="relative py-20 bg-black text-white overflow-hidden">
       <div className="container mx-auto px-6">
-
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#39ff14] to-[#22ce33] bg-clip-text text-transparent">
@@ -65,18 +67,19 @@ function TeamSection() {
           </p>
         </div>
 
-        {/* Team Grid (Same layout as the product cards) */}
+        {/* Team Grid */}
         <div className="flex justify-center">
-          <div className="grid w-[85%] md:grid-cols-3 gap-12 place-items-center">
+          <div className="grid w-full max-w-6xl md:grid-cols-3 gap-12 place-items-center">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="relative bg-white/5 border border-gray-800 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                className="relative bg-white/5 border border-gray-800 rounded-2xl shadow-xl 
+                hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 w-full max-w-sm"
               >
-                {/* Image + Hover Social Overlay */}
+                {/* Profile Image + Social Hover */}
                 <div className="relative overflow-hidden rounded-t-2xl">
                   <img
                     src={member.img}
@@ -84,7 +87,8 @@ function TeamSection() {
                     className="w-full h-64 object-cover"
                   />
 
-                  <div className="absolute inset-0 bg-black/70 opacity-0 hover:opacity-100 transition-all duration-500 flex items-center justify-center p-4">
+                  <div className="absolute inset-0 bg-black/70 opacity-0 hover:opacity-100 transition-all 
+                       duration-500 flex items-center justify-center p-4">
                     <div className="flex gap-4 text-xl">
                       {member.social.map((s, i) => (
                         <a
@@ -101,20 +105,17 @@ function TeamSection() {
                   </div>
                 </div>
 
-                {/* Text Content */}
+                {/* Textual Info */}
                 <div className="p-6 text-center">
-                  <h3 className="text-2xl font-bold ">{member.name}</h3>
+                  <h3 className="text-2xl font-bold">{member.name}</h3>
                   <p className="text-gray-200 font-orbitron text-sm mb-3">{member.title}</p>
-
-                  <p className="text-gray-300 font-orbitron text-lg  leading-relaxed mb-4">{member.bio}</p>
-
-                  {/* Tags */}
+                  <p className="text-gray-300 font-orbitron text-base leading-relaxed mb-4">{member.bio}</p>
                   {member.tags && (
                     <div className="flex flex-wrap justify-center gap-2 mt-2">
                       {member.tags.map((tag, i) => (
                         <span
                           key={i}
-                          className="px-3 py-1 text-xs font-orbitron rounded-full   bg-white/5"
+                          className="px-3 py-1 text-xs font-orbitron rounded-full bg-white/5"
                         >
                           {tag}
                         </span>
@@ -129,8 +130,8 @@ function TeamSection() {
 
         {/* View All Button */}
         <div className="text-center mt-14">
-          <a
-            href="about.html"
+          <Link
+            to="/about"
             className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full
             overflow-hidden group
             bg-gradient-to-r from-[#39ff14] to-[#00f2fe]
@@ -138,7 +139,7 @@ function TeamSection() {
             shadow-[0_0_18px_rgba(0,255,200,0.35)]
             transition-transform duration-300 hover:scale-[1.03]"
           >
-            <span className="relative z-10 flex items-center gap-3">
+            <span className="relative font-orbitron text-white z-10 flex items-center gap-3">
               Meet the Full Team
               <svg
                 viewBox="0 0 24 24"
@@ -150,16 +151,12 @@ function TeamSection() {
                 <path d="M5 12H19M12 5L19 12L12 19" />
               </svg>
             </span>
-
-            {/* Hover Shine Overlay */}
             <span
               className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left
               bg-white/25 transition-transform duration-500 ease-out"
             ></span>
-          </a>
-
+          </Link>
         </div>
-
       </div>
     </section>
   );

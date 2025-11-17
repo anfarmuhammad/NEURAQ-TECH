@@ -1,7 +1,7 @@
 // src/pages/About.jsx
 import React from "react";
 import { useCounter } from "../Hooks/useCounter";
-import { TechButton } from "../Ui/TechButton";
+import { Link } from "react-router-dom";
 import {
   MicOff,
   UserCheck,
@@ -163,15 +163,15 @@ const About = () => {
     <main className="min-h-screen bg-black text-light pt-20">
       {/* Founder Story */}
       <section className="relative py-20 overflow-hidden">
-        <div className="container mx-auto flex items-center justify-center px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-[90%] items-center">
+        <div className="container mx-auto  w-[90%] flex items-center justify-center px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2  gap-12 w-[90%] items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative rounded-2xl bg-amber-500 h-full overflow-hidden shadow-2xl">
                 <img
                   src={Profile}
                   alt="Shaheen K.P., Founder"
@@ -195,7 +195,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-4"
             >
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
                 The Unyielding Spirit of Neuraq
               </h1>
               <blockquote className="text-xl font-orbitron font-bold leading-relaxed text-white mb-6 border-l-4 border-primary pl-4">
@@ -209,7 +209,7 @@ const About = () => {
                   His journey, marked by thoughtful pauses and quiet resilience, echoes a deeper truth: that strength is often sculpted not by the absence of obstacles, but by the unwavering pursuit of vision despite them.
                 </p>
               </div>
-              <footer className="flex items-center gap-4 mt-8 pt-6 border-t border-gray-800">
+              <footer className="flex items-center  gap-4 mt-8 pt-6 border-t border-gray-800">
                 <img
                   src={Signature}
                   alt="Shaheen K.P. signature"
@@ -232,7 +232,7 @@ const About = () => {
 
       {/* HeuLink Initiative */}
       <section className="relative py-20 bg-white/5 text-white overflow-hidden">
-        <div className="container mx-auto px-4">
+        <div className="container  w-[90%] mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -301,16 +301,25 @@ const About = () => {
             <p className="text-white text-xl font-semibold font-orbitron mb-6">
               We envision a future where communication barriers no longer exist—where every voice, regardless of its challenges, is heard clearly and confidently.
             </p>
-            <TechButton variant="primary" size="large">
-              Learn More About HeuLink →
-            </TechButton>
+            <button
+              className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full overflow-hidden group
+              bg-gradient-to-r from-[#39ff14] font-extrabold to-[#00f2fe] text-black tracking-wide font-orbitron
+              shadow-[0_0_18px_rgba(0,255,200,0.35)] transition-transform duration-300 hover:scale-[1.03]"
+            >
+              <span className="relative z-10 text-white flex items-center gap-3">
+                Learn More About HeuLink →
+              </span>
+
+              <span className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left 
+                  bg-white/25 transition-transform duration-500 ease-out"></span>
+            </button>
           </div>
         </div>
       </section>
 
       {/* Impact Section */}
       <section className="relative py-20 bg-darker">
-        <div className="container mx-auto px-4">
+        <div className="container w-[80%] mx-auto px-4">
           <motion.header
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -385,8 +394,8 @@ const About = () => {
         className="relative py-20 bg-black"
         aria-labelledby="team-heading"
       >
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-14">
+        <div className="container  w-[78%] mx-auto px-4">
+          <div className="text-center  mb-14">
             <h2
               id="team-heading"
               className="text-5xl font-extrabold leading-tight bg-gradient-to-r from-[#39ff14] to-[#07deee] bg-clip-text text-transparent"
@@ -436,9 +445,19 @@ const About = () => {
             <p className="text-gray-300 mb-8">
               We're always looking for passionate individuals to join our team.
             </p>
-            <TechButton variant="primary" size="large" href="/career">
-              View Career Opportunities
-            </TechButton>
+            <Link
+              to="/career"
+              className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full overflow-hidden group
+              bg-gradient-to-r from-[#39ff14]  to-[#00f2fe] text-black  tracking-wide font-orbitron
+              shadow-[0_0_18px_rgba(0,255,200,0.35)] transition-transform duration-300 hover:scale-[1.03]"
+            >
+              <span className="relative z-10 text-white flex font-bold items-center gap-3">
+                View Career Opportunities →
+              </span>
+
+              <span className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left 
+                  bg-white/25 transition-transform duration-500 ease-out"></span>
+            </Link>
           </motion.section>
         </div>
       </section>

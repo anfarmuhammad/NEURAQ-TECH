@@ -92,15 +92,15 @@ const Career = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark text-light pt-20">
+    <div className="min-h-screen bg-black text-light pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 text-center">
+      <section className="relative bg-white/5 py-20 text-center">
         <div className="container mx-auto px-4">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold font-orbitron mb-6 text-gradient"
+            className="text-4xl md:text-6xl font-bold  mb-6 text-gradient"
           >
             Join Our Mission
           </motion.h1>
@@ -108,7 +108,7 @@ const Career = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-gray-300 font-orbitron mb-8 max-w-3xl mx-auto"
           >
             Build meaningful technology that creates social impact
           </motion.p>
@@ -117,48 +117,80 @@ const Career = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <TechButton
+            <button
               variant="primary"
               size="large"
-              onClick={() => document.getElementById('open-positions').scrollIntoView({ behavior: 'smooth' })}
-            >
-              See Open Roles
-            </TechButton>
+              onClick={() => {
+                document
+                  .getElementById("open-positions")
+                  .scrollIntoView({ behavior: "smooth" });
+              }}
+              className="
+              relative inline-flex items-center gap-3
+              px-8 py-4 rounded-full overflow-hidden group
+              bg-gradient-to-r from-[#39ff14] to-[#00f2fe]
+              text-black font-semibold tracking-wide font-orbitron
+              shadow-[0_0_18px_rgba(0,255,200,0.35)]
+              transition-transform duration-300 hover:scale-[1.03]
+              focus:outline-none focus:ring-2 focus:ring-[#39ff14]">
+              <span className="relative z-10 font-extrabold text-white flex items-center gap-3">
+                See Open Roles →
+              </span>
+
+              {/* Hover Shine Effect */}
+              <span
+                className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left
+                bg-white/25 transition-transform duration-500 ease-out"
+              />
+            </button>
           </motion.div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="relative py-20 bg-darker">
+      <section className="relative py-20 bg-black">
         <div className="container mx-auto px-4">
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold font-orbitron mb-4 text-gradient">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#39ff14] to-[#22ce33] text-transparent bg-clip-text">
               Why Join Neuraq?
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl font-orbitron text-gray-300">
               We're a passionate team building technology with purpose
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Benefits Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass-card group hover:border-primary/50 transition-all duration-300 p-8 text-center"
+                transition={{ duration: 0.6, delay: index * 0.12 }}
+                className="bg-[#0d0d0d] border border-gray-700/60  rounded-2xl p-10 text-center"
               >
-                <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <benefit.icon className="w-10 h-10 text-primary" />
+                {/* Icon */}
+                <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full 
+                    bg-white/5 shadow-inner hover:scale-110  border-gray-800/60 hover:border-gray-300 
+                    hover:shadow-[0_0_25px_#39ff1480] transition-all duration-300">
+                  <benefit.icon className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">{benefit.title}</h3>
-                <p className="text-gray-300">{benefit.description}</p>
+
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  {benefit.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-300 font-orbitron leading-relaxed">
+                  {benefit.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -167,21 +199,28 @@ const Career = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 max-w-4xl mx-auto text-center glass-card p-8 border border-yellow-500/20"
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-20 max-w-4xl mx-auto text-center"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Important Note About Compensation</h3>
-            <div className="space-y-4 text-gray-300">
+            <div className="space-y-5 font-orbitron text-gray-300 leading-relaxed">
               <p>
-                As a small startup focused on social impact, we currently offer project-based compensation rather than fixed salaries. Payments depend on the projects we secure. While we may not offer high financial compensation at this stage, we provide valuable experience, networking opportunities, and the chance to work on meaningful projects.
+                As a small startup focused on social impact, we currently offer
+                project-based compensation rather than fixed salaries. Payments depend
+                on the projects we secure. While we may not offer high financial
+                compensation at this stage, we provide valuable experience, networking
+                opportunities, and the chance to work on meaningful projects.
               </p>
+
               <p>
-                If you're mainly focused on financial benefits, this opportunity might not be the right fit. We're building a team driven by passion, purpose, and growth.
+                If you're mainly focused on financial benefits, this opportunity might
+                not be the right fit. We're building a team driven by passion,
+                purpose, and growth.
               </p>
             </div>
           </motion.div>
         </div>
       </section>
+
 
       {/* Open Positions */}
       <section id="open-positions" className="relative py-20">
@@ -192,64 +231,73 @@ const Career = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold font-orbitron mb-4 text-gradient">
+            <h2 className="text-3xl md:text-5xl font-bold mb-2 text-gradient">
               Current Opportunities
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-gray-300 font-orbitron">
               Part-time, project-based roles with potential for growth
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
             {positions.map((position, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass-card group hover:border-primary/50 transition-all duration-300"
+                className="bg-[#0d0d0d] border border-gray-700/60 rounded-2xl shadow-xl p-8 relative flex flex-col justify-between"
               >
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-4">{position.title}</h3>
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {position.title}
+                </h3>
 
-                  <div className="flex items-center gap-4 text-sm text-gray-400 mb-4">
-                    <div className="flex items-center gap-1">
-                      <MapPin className="w-4 h-4" />
-                      {position.location}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      {position.type}
-                    </div>
+                {/* Icons Row */}
+                <div className="flex items-center gap-6 text-sm font-orbitron text-gray-400 mb-6">
+                  <div className="flex items-center gap-1">
+                    <MapPin className="w-4 h-4" />
+                    {position.location}
                   </div>
 
-                  <p className="text-gray-300 mb-6">{position.description}</p>
-
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {position.tags.map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full border border-primary/20"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="flex items-center gap-1">
+                    <Clock className="w-4 h-4" />
+                    {position.type}
                   </div>
+                </div>
 
-                  <TechButton
-                    variant="primary"
-                    size="small"
+                {/* Description */}
+                <p className="text-gray-300 font-orbitron leading-relaxed mb-6">
+                  {position.description}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-3 mb-10">
+                  {position.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-4 py-1.5 border border-gray-700 text-gray-300 text-xs rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Apply Button */}
+                <div className="flex justify-end">
+                  <button
+                    className="px-8 py-3 bg-white text-black rounded-full text-sm font-bold hover:opacity-90 transition"
                     onClick={() => openApplicationModal(position)}
-                    className="w-full"
                   >
-                    Apply Now
-                  </TechButton>
+                    APPLY NOW →
+                  </button>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* Application Modal */}
       <AnimatePresence>
@@ -279,7 +327,7 @@ const Career = () => {
                   </button>
                 </div>
 
-                <p className="text-gray-300 mb-6">
+                <p className="text-gray-300 font-orbitron mb-6">
                   Applying for: <span className="text-primary font-semibold">{selectedPosition?.title}</span>
                 </p>
 
@@ -294,7 +342,7 @@ const Career = () => {
                       type="text"
                       name="name"
                       required
-                      className="w-full bg-white/5 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
+                      className="w-full bg-white/20 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -306,7 +354,7 @@ const Career = () => {
                       type="email"
                       name="email"
                       required
-                      className="w-full bg-white/5 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
+                      className="w-full bg-white/20 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -318,7 +366,7 @@ const Career = () => {
                       type="tel"
                       name="phone"
                       required
-                      className="w-full bg-white/5 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
+                      className="w-full bg-white/20 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -330,7 +378,7 @@ const Career = () => {
                       name="skills"
                       required
                       rows="3"
-                      className="w-full bg-white/5 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
+                      className="w-full bg-white/20 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
                     ></textarea>
                   </div>
 
@@ -342,18 +390,32 @@ const Career = () => {
                       name="why"
                       required
                       rows="3"
-                      className="w-full bg-white/5 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
+                      className="w-full bg-white/20 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
                     ></textarea>
                   </div>
 
-                  <TechButton
+                  <button
                     type="submit"
                     variant="primary"
                     size="large"
-                    className="w-full"
-                  >
-                    Submit Application
-                  </TechButton>
+                    className="w-full
+                    relative inline-flex items-center justify-center gap-3
+                    px-8 py-4 rounded-full overflow-hidden group
+                    bg-gradient-to-r from-[#39ff14] to-[#00f2fe]
+                   text-black font-semibold tracking-wide font-orbitron
+                    shadow-[0_0_18px_rgba(0,255,200,0.35)]
+                    transition-transform duration-300 hover:scale-[1.03]
+                    focus:outline-none focus:ring-2 focus:ring-[#39ff14]">
+                    <span className="relative z-10 font-extrabold text-white flex items-center gap-3">
+                      Submit Application →
+                    </span>
+                    
+                    {/* Hover Shine Light */}
+                    <span
+                      className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left
+                      bg-white/25 transition-transform duration-500 ease-out"
+                    />
+                  </button>
                 </form>
               </div>
             </motion.div>

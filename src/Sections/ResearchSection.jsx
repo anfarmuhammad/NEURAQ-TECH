@@ -2,6 +2,7 @@
 import React from "react";
 import { Brain, Atom, Fingerprint } from "lucide-react";
 import Initiative from "../assets/images/inititive.svg";
+import { Link } from "react-router-dom";
 
 function ResearchSection() {
   return (
@@ -9,8 +10,7 @@ function ResearchSection() {
       id="research"
       className="relative overflow-hidden dark:bg-black/95 text-white py-20"
     >
-      <div className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
-        
+      <div className="relative z-10 container w-[95%]  mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
         {/* Image Section */}
         <div className="flex-1 relative group">
           <img
@@ -21,7 +21,7 @@ function ResearchSection() {
         </div>
 
         {/* Text Section */}
-        <div className="flex-1 space-y-6">
+        <div className="flex-1 space-y-6 text-left">
           <h2 className="text-4xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-[#39ff14] to-[#22ce33] bg-clip-text text-transparent">
             Flagship Initiative
           </h2>
@@ -31,8 +31,8 @@ function ResearchSection() {
           </p>
 
           <p className="font-orbitron text-[1.2rem] leading-relaxed">
-            To empower individuals across India to achieve confident and clear communication
-            through innovative AI-driven speech enhancement solutions.
+            To empower individuals across India to achieve confident and clear
+            communication through innovative AI-driven speech enhancement solutions.
           </p>
 
           {/* Highlights */}
@@ -45,8 +45,8 @@ function ResearchSection() {
               <div>
                 <h3 className="text-xl font-extrabold">Connect</h3>
                 <p className="font-orbitron text-sm leading-relaxed">
-                  This word speaks to breaking down barriers – the very first step toward
-                  inclusion and engagement.
+                  This word speaks to breaking down barriers – the very first
+                  step toward inclusion and engagement.
                 </p>
               </div>
             </div>
@@ -59,8 +59,8 @@ function ResearchSection() {
               <div>
                 <h3 className="text-xl font-extrabold">Communicate</h3>
                 <p className="font-orbitron text-sm leading-relaxed">
-                  This is the core function and daily goal – the act of effectively exchanging
-                  thoughts and information.
+                  This is the core function and daily goal – the act of effectively
+                  exchanging thoughts and information.
                 </p>
               </div>
             </div>
@@ -73,8 +73,8 @@ function ResearchSection() {
               <div>
                 <h3 className="text-xl font-extrabold">Conquer</h3>
                 <p className="font-orbitron text-sm leading-relaxed">
-                  This word signifies achievement, mastery, and overcoming challenges. It
-                  represents the aspirational outcome.
+                  This word signifies achievement, mastery, and overcoming
+                  challenges. It represents the aspirational outcome.
                 </p>
               </div>
             </div>
@@ -83,8 +83,8 @@ function ResearchSection() {
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-6 pt-8 font-orbitron">
             {/* Neon Gradient Button */}
-            <a
-              href="innovation.html"
+            <Link
+              to="/innovation"
               className="relative inline-flex items-center gap-3 px-7 py-4 rounded-full
                          overflow-hidden group
                          bg-gradient-to-r from-[#39ff14] to-[#00f2fe]
@@ -92,7 +92,7 @@ function ResearchSection() {
                          shadow-[0_0_18px_rgba(0,255,200,0.35)]
                          transition-transform duration-300 hover:scale-[1.03]"
             >
-              <span className="relative z-10 flex items-center gap-3">
+              <span className="relative text-white z-10 flex items-center gap-3">
                 View Research
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -106,11 +106,11 @@ function ResearchSection() {
                 </svg>
               </span>
               <span className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left bg-white/25 transition-transform duration-500 ease-out"></span>
-            </a>
+            </Link>
 
             {/* Outline Neon Button */}
-            <a
-              href="innovation.html"
+            <Link
+              to="/innovation"
               className="relative inline-flex items-center gap-3 px-7 py-4 rounded-full
                          border border-[#ffffff50] text-gray-200
                          overflow-hidden group
@@ -131,7 +131,7 @@ function ResearchSection() {
                 </svg>
               </span>
               <span className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left bg-[#39ff1415] transition-transform duration-500 ease-out shadow-[0_0_25px_#39ff14]"></span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
