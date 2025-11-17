@@ -22,7 +22,7 @@ const Home = () => {
       <TeamSection />
       <TestimonialsSection />
       <PartnersSection />
-
+      
     </div>
   );
 };

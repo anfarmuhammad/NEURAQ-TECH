@@ -50,7 +50,7 @@ export const Navbar = () => {
             <Link
               key={path}
               to={path}
-              className={`relative text-[13px] font-semibold transition-all duration-300 ${isActive(path)
+              className={`relative text-[13px] font-semibold font-orbitron transition-all duration-300 ${isActive(path)
                   ? "text-white"
                   : "text-white hover:text-[#00FF9C]"
                 }`}
@@ -70,7 +70,7 @@ export const Navbar = () => {
         <div className="hidden md:flex items-center">
           <Link
             to="/contact"
-            className="relative inline-block px-6 py-2 font-semibold rounded-full transition-transform duration-300 bg-gradient-to-r from-[#00FF9C] to-[#00FFF0] text-black hover:scale-[1.05] shadow-[0_0_15px_rgba(0,255,160,0.5)]"
+            className="relative inline-block px-6 py-2 font-semibold font-orbitron rounded-full transition-transform duration-300 bg-gradient-to-r from-[#00FF9C] to-[#00FFF0] text-black hover:scale-[1.05] shadow-[0_0_15px_rgba(0,255,160,0.5)]"
           >
             Contact
           </Link>

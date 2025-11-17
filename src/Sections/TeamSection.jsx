@@ -1,4 +1,3 @@
-//anfarmk
 //src/Sectons/TeamSecton.jx
 import React from "react";
 import { motion } from "framer-motion";

@@ -22,7 +22,7 @@ import { FaTrophy } from "react-icons/fa";
 import Profile1 from "../assets/images/profile-1.svg";
 import Profile2 from "../assets/images/profile-2.svg";
 import Profile3 from "../assets/images/profile-3.svg";
-import Profile4 from "../assets/images/profile-4.svg";
+import Profile4 from "../assets/images/profile-4.sg.jpeg";
 import Profile5 from "../assets/images/profile-6.svg";
 import Profile6 from "../assets/images/profile-5.svg";
 import Profile7 from "../assets/images/profile-7.svg";
